@@ -1,7 +1,6 @@
 package com.jboss.fuse.test.practice.browser;
 
 import static org.junit.Assert.assertTrue;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Before;
@@ -17,19 +16,22 @@ import com.jboss.fuse.test.practice.Practice;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import pageObjects.LoginPage;
+
 public class ExBrowserTest extends Practice {
 //	@ClassRule
 //	public static Fafram fafram = new Fafram();
 
+	//protected static WebDriver driver = new ChromeDriver();
+
 	@Before
-	public void timeout() {
+	public void launchPage() {
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
-
 	@Test
 	public void exBrowserTest() {
 		WebDriver driver = new ChromeDriver();
@@ -40,6 +42,17 @@ public class ExBrowserTest extends Practice {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.login("fafram", "fafram");
+		try {
+			Thread.sleep(5000L);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		loginPage.switchDashboard("Process");
+
+		/*
 		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("fafram");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -60,6 +73,10 @@ public class ExBrowserTest extends Practice {
 			System.out.println("Cell value is : " + el.getText());
 			//assertTrue(el.getText().contains("process"));
 			assertThat(el.getText()).containsIgnoringCase("Process");
-		}
+		}*/
+
+		/*
+		login.login("fafram", "fafram").searchFor("Process").assertCorrectFiltering();
+		 */
 	}
 }
