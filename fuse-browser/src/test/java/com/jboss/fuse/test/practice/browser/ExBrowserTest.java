@@ -1,7 +1,6 @@
 package com.jboss.fuse.test.practice.browser;
 
 import static org.junit.Assert.assertTrue;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Before;

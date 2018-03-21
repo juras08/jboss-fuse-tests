@@ -8,3 +8,4 @@ public abstract class Practice {
 	@Rule
 	public Fafram fafram = new Fafram();
 }
+}
