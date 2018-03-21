@@ -62,18 +62,6 @@
 
 	<profiles>
 		<profile>
-			<id>jboss-fuse</id>
-			<activation>
-				<!--<property>-->
-					<!--<name>fuse.test</name>-->
-				<!--</property>-->
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<modules>
-				<module>fuse-test</module>
-			</modules>
-		</profile>
-		<profile>
 			<id>jboss-fuse-browser</id>
 			<activation>
 				<property>
