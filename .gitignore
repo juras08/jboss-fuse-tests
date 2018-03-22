@@ -1,0 +1,34 @@
+# Eclipse
+.classpath
+.metadata
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+*.versionsBackup
+
+*~
+.attach_pid*
+
+#Fabric-deplyoer test-file outptu
+util/fuse-fafram/fabric-cluster-deployer/src/main/resources/history.txt
+*.log
+
+# gradle
+.gradle
+
+# patch tests
+fuse-tests/karaf-related-tests/patch-tests/*.zip
+
+#properties files
+jbossqe-fuse.properties
