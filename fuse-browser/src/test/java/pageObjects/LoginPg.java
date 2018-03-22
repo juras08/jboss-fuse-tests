@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+// Not used now
 public class LoginPg extends PageObject {
 
 	@FindBy(id = "username")

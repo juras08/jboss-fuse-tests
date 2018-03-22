@@ -1,0 +1,285 @@
+<html ng-csp="" class="ng-scope" xmlns:ng="http://angularjs.org" ng-app="hawtioCore"><head>
+    <script type="text/javascript">
+        var base = window.location.pathname.split('/', 2)[1];
+        if (base == "") {
+          document.write("<base href='/'/>");
+        } else {
+          document.write("<base href='" + window.location.pathname + "' />");
+        }
+    </script><base href="/hawtio/">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/docs/assets/css/bootstrap.css?fbe0125ffe876b99">
+    <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css?2d53b06f292dcb35">
+    <!-- endbower -->
+
+    <link rel="stylesheet" href="css/hawtio-base.css?a4f10030f9fddc1b">
+
+    <!--
+    <link rel="stylesheet" media="screen and (min-width: 980px)" href="css/site-wide.css?1e706b87f4d1b2c4" type="text/css"/>
+    <link rel="stylesheet" media="screen and (max-width: 979px)" href="css/site-narrow.css?b53f63f1853e78bd" type="text/css"/>
+    -->
+    <link id="theme" rel="stylesheet" href="../redhat-branding/plugin/css/redhat.css" type="text/css">
+    <link id="branding" rel="stylesheet" href="../redhat-branding/plugin/css/branding.css" type="text/css">
+    
+
+    <!-- Distro customisations -->
+    <link rel="stylesheet" href="css/vendor.css?3197d45b2c704111" type="text/css">
+
+    <script type="text/ng-template" id="logClipboardTemplate">
+<!--
+<style type="text/css">
+* {
+  font-family: monospace;
+}
+ul li {
+  list-style-type: none;
+}
+ul li:nth-child(odd) {
+  background: #f3f3f3;
+}
+span.green {
+  color: green;
+}
+div.log-stack-trace p {
+  line-height: 14px;
+  margin-bottom: 2px;
+}
+div.log-stack-trace p:nth-child(even) {
+  background: white;
+}
+div.log-stack-trace p:nth-child(odd) {
+  background: #f3f3f3;
+}
+</style>
+-->
+    </script>
+  <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style><link id="favicon" rel="icon" type="image/ico" href="favicon.ico">"<link rel="stylesheet" type="text/css" href="/hawtio-karaf-terminal/css/gogo.css"></head>
+
+  <body>
+    <div id="log-panel" style="bottom: 110%" ng-controller="Core.ConsoleController" class="ng-scope">
+      <div>
+        <ul id="log-panel-statements"><li class="INFO">[<span class="green">RHBranding</span>] Red Hat theme loaded</li><li class="INFO">[<span class="green">Core</span>] Management Console started</li></ul>
+        <div id="close" log-toggler="">
+          <i class="icon-chevron-up"></i>
+        </div>
+        <div id="copy">
+          <i class="span2 icon-copy" title="Click to copy log to clipboard" zero-clipboard="" use-callback="setHandler(clip)"></i>
+          <i class="span3 icon-trash" title="Click to clear log" zero-clipboard="" use-callback="setHandler(clip)"></i>
+        </div>
+      </div>
+    </div>
+
+    <div id="main-body" ng-controller="Core.AppController" style="" class="ng-scope">
+      <!--  navbar-inverse -->
+      <div id="main-nav" class="navbar navbar-fixed-top ng-scope" ng-show="!fullScreen()" ng-controller="Core.NavBarController" style="display: none;">
+
+        <div class="navbar-inner main-nav-upper">
+
+          <div class="container">
+            <div class="pull-left">
+              <a ng-href="#" class="brand" data-placement="bottom" ng-include="'app/core/html/branding.html'" data-original-title="Go to home" href="#"><img class="no-shadow ng-scope with-text" ng-show="branding.appLogo" ng-src="../redhat-branding/plugin/img/logo.svg" ng-class="branding.logoClass()" src="../redhat-branding/plugin/img/logo.svg">
+<strong ng-hide="branding.logoOnly" ng-bind-html-unsafe="branding.appName" class="ng-scope ng-binding">Management Console</strong></a>
+            </div>
+
+            <div class="pull-right">
+              <ul class="nav nav-tabs pull-right">
+                <!-- dynamic links, hook for plugins-->
+                <li ng-show="loggedIn() &amp;&amp; isCustomLinkSet() > 0 " class="dropdown" style="display: none;">
+                  <a ng-href="#" data-placement="bottom" class="dropdown-toggle" data-toggle="dropdown" data-original-title="Extra" href="#">
+                    <i class="icon-user fixme"></i>&nbsp;&nbsp;<span class="ng-binding">Extra</span>&nbsp;<span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu right">
+                    <!-- ngRepeat: entry in navBarViewCustomLinks.list -->
+                  </ul>
+                </li>
+
+                <li ng-show="loggedIn()" style="display: none;">
+                  <a ng-href="" data-placement="bottom" log-toggler="" data-original-title="Show the logging console">
+                    <i class="icon-desktop"></i>
+                  </a>
+                </li>
+                <li ng-show="loggedIn()" ng-class="{active : isActive('#/help')}" style="display: none;">
+                  <a ng-href="#/help" data-placement="bottom" data-original-title="Read the help about how to use this console" href="#/help">
+                    <i class="icon-question-sign"></i>
+                  </a>
+                </li>
+
+                <li ng-show="loggedIn() &amp;&amp; hasMBeans()" class="dropdown" style="display: none;">
+                  <a ng-href="#" data-placement="bottom" class="dropdown-toggle" data-toggle="dropdown" data-original-title="Preferences " href="#">
+                    <i class="icon-user fixme"></i>&nbsp;&nbsp;<span class="ng-binding">user</span>&nbsp;<span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu right">
+                    <li class="item">
+                      <a href="" ng-click="showPreferences()" data-placement="bottom" data-original-title="Edit your preferences">
+                        <i class="icon-cogs fixme"></i> Preferences
+                      </a>
+                    </li>
+
+                    <li class="item" ng-show="showLogout()" style="display: none;">
+                      <a href="" data-placement="bottom" ng-click="logout()" data-original-title="Log out">
+                        <i class="icon-signout fixme"></i> Log out
+                      </a>
+                    </li>
+
+                    <li class="item">
+                      <a ng-href="#/about" data-placement="bottom" data-original-title="About" class="ng-binding" href="#/about">
+                        <i class="icon-info"></i> About 
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>
+
+                <li ng-hide="loggedIn()" ng-class="{active : isActive('#/login')}" class="active">
+                  <a ng-href="#/login" data-placement="bottom" data-original-title="Log in" href="#/login">
+                    <i class="icon-user"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="navbar-inner main-nav-lower" ng-show="!login()" style="display: none;">
+          <div class="container">
+            <ul ng-show="loggedIn()" class="nav" hawtio-auto-dropdown="" style="display: none;">
+              <li ng-show="loggedIn() &amp;&amp; (perspectives.length > 1 || recentConnections.length)" class="dropdown perspective-selector" style="display: none;">
+                <a href="#" class="dropdown-toggle">
+                  <span config="perspectiveDetails.perspective.icon">
+  <span ng-show="icon &amp;&amp; icon.type &amp;&amp; icon.src" title="" ng-switch="icon.type" style="display: none;">
+    <!-- ngSwitchWhen: icon -->
+    <!-- ngSwitchWhen: img -->
+  </span>
+  <span ng-hide="icon &amp;&amp; icon.type &amp;&amp; icon.src">
+    &nbsp;
+  </span>
+</span>
+                  <span ng-bind="perspectiveDetails.perspective.label || 'Perspective'" class="ng-binding">Perspective</span>
+                  <span ng-show="perspectives.length > 1" class="caret" style="display: none;"></span>
+                </a>
+                <div class="dropdown-menu">
+                  <div ng-show="perspectives.length > 1" style="display: none;">
+                    <p>Perspectives</p>
+                    <ul class="unstyled">
+                      <!-- ngRepeat: perspective in perspectives track by $index -->
+                    </ul>
+                  </div>
+                  <div ng-show="recentConnections.length" style="display: none;">
+                    <p>Recent Connections</p>
+                    <ul class="unstyled">
+                      <li>
+                        <a href="" ng-click="goHome()">Console</a>
+                     </li>
+                      <!-- ngRepeat: connection in recentConnections track by $index -->
+                      <li class="clear-recent">
+                        <a href="" ng-click="clearConnections()">Clear Recent</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <!-- ngRepeat: nav in topLevelTabs track by $index --><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope">
+                <a ng-href="#/jvm/connect" data-placement="bottom" ng-bind="nav.content" data-original-title="Connect to other JVMs" class="ng-binding" href="#/jvm/connect">Connect</a>
+              </li>
+              <li class="dropdown overflow" style="float: right !important; visibility: hidden;">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></a>
+                <ul class="dropdown-menu right"></ul>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="pref-slideout slideout right slideout right" hawtio-slideout="showPrefs" title="Management Console Preferences" style="top: 10%; height: 80%;">
+  <div class="slideout-title">
+    <div class="mouse-pointer pull-right" ng-click="hidePanel($event)" title="Close panel">
+      <i class="icon-remove"></i>
+    </div>
+    <span class="ng-binding">Management Console Preferences</span>
+  </div>
+  <div class="slideout-content">
+    <div class="slideout-body"></div>
+  </div>
+</div>
+
+      <div id="main" class="container-fluid ng-scope" ng-controller="Core.ViewController" style="min-height: 955px;">
+        <div ng-include="" src="viewPartial" style="padding-left: 0px;"><div class="row-fluid ng-scope">
+  <div ng-controller="Jmx.MBeansController" class="ng-scope"></div>
+  <div ng-view=""><div ng-controller="Core.LoginController" class="ng-scope">
+
+
+  <div class="login-wrapper">
+    <div class="login-form">
+      <form name="login" class="form-horizontal no-bottom-margin ng-invalid ng-invalid-required ng-dirty" ng-submit="doLogin()">
+        <fieldset>
+          <div class="login-logo">
+            <img ng-src="../redhat-branding/plugin/img/logo.svg" ng-show="branding.appLogo" ng-class="branding.logoClass()" class="with-text" src="../redhat-branding/plugin/img/logo.svg">
+            <span ng-show="branding.appName &amp;&amp; !branding.logoOnly" class="ng-binding">Management Console</span>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="username">Username </label>
+            <div class="controls">
+              <input id="username" class="input-medium ng-dirty ng-valid ng-valid-required" required="" ng-model="entity.username" autofill="" autofocus="" style="" type="text">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="password">Password </label>
+            <div class="controls">
+              <input id="password" class="input-medium ng-invalid ng-invalid-required ng-dirty" required="" ng-model="entity.password" autofill="" type="password">
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="controls">
+              <label class="checkbox" for="rememberMe">
+                <input id="rememberMe" ng-model="rememberMe" class="ng-pristine ng-valid" type="checkbox"> Remember me
+              </label>
+              <button type="submit" class="btn btn-success"> Log in</button>
+            </div>
+          </div>
+
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+
+</div>
+
+</div>
+</div>
+
+
+</div>
+      </div>
+
+      <div class="">
+        
+      </div>
+
+      <div class="">
+        
+      </div>
+    </div>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/html5shiv.js?d6a214a5a003e446"></script>
+    <![endif]-->
+
+    <script src="app/app.js?752cdcecc1eaedae"></script>
+
+    <!-- Distro customisations -->
+    <script type="text/javascript" src="vendor.js?fd4637ea0573f911"></script>
+  
+
+
+<div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 982px; width: 1845px; z-index: -999999; position: fixed;"><img style="position: absolute; margin: 0px; padding: 0px; border: medium none; width: 1845px; height: 1441.41px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -229.703px;" src="../redhat-branding/plugin/img/login-screen-background.jpg"></div></body></html>
