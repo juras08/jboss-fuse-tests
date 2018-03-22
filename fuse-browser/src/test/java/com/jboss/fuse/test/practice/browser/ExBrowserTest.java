@@ -5,11 +5,7 @@ import static org.junit.Assert.assertTrue;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Before;
-import org.junit.ClassRule;
-import org.junit.Rule;
 import org.junit.Test;
-
-import org.jboss.fuse.qa.fafram8.resource.Fafram;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +16,6 @@ import com.jboss.fuse.test.practice.Practice;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 
 public class ExBrowserTest extends Practice {
 //	@ClassRule
