@@ -1,0 +1,609 @@
+<html ng-csp="" class="ng-scope" xmlns:ng="http://angularjs.org" ng-app="hawtioCore"><head>
+    <script type="text/javascript">
+        var base = window.location.pathname.split('/', 2)[1];
+        if (base == "") {
+          document.write("<base href='/'/>");
+        } else {
+          document.write("<base href='" + window.location.pathname + "' />");
+        }
+    </script><base href="/hawtio/">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/docs/assets/css/bootstrap.css?fbe0125ffe876b99">
+    <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.css?2d53b06f292dcb35">
+    <!-- endbower -->
+
+    <link rel="stylesheet" href="css/hawtio-base.css?a4f10030f9fddc1b">
+
+    <!--
+    <link rel="stylesheet" media="screen and (min-width: 980px)" href="css/site-wide.css?1e706b87f4d1b2c4" type="text/css"/>
+    <link rel="stylesheet" media="screen and (max-width: 979px)" href="css/site-narrow.css?b53f63f1853e78bd" type="text/css"/>
+    -->
+    <link id="theme" rel="stylesheet" href="../redhat-branding/plugin/css/redhat.css" type="text/css">
+    <link id="branding" rel="stylesheet" href="../redhat-branding/plugin/css/branding.css" type="text/css">
+    
+
+    <!-- Distro customisations -->
+    <link rel="stylesheet" href="css/vendor.css?3197d45b2c704111" type="text/css">
+
+    <script type="text/ng-template" id="logClipboardTemplate">
+<!--
+<style type="text/css">
+* {
+  font-family: monospace;
+}
+ul li {
+  list-style-type: none;
+}
+ul li:nth-child(odd) {
+  background: #f3f3f3;
+}
+span.green {
+  color: green;
+}
+div.log-stack-trace p {
+  line-height: 14px;
+  margin-bottom: 2px;
+}
+div.log-stack-trace p:nth-child(even) {
+  background: white;
+}
+div.log-stack-trace p:nth-child(odd) {
+  background: #f3f3f3;
+}
+</style>
+-->
+    </script>
+  <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style><link id="favicon" rel="icon" type="image/ico" href="favicon.ico">"<link rel="stylesheet" type="text/css" href="/hawtio-karaf-terminal/css/gogo.css"><style type="text/css"> [data-col="23"] { left:3570px;}  [data-col="22"] { left:3408px;}  [data-col="21"] { left:3246px;}  [data-col="20"] { left:3084px;}  [data-col="19"] { left:2922px;}  [data-col="18"] { left:2760px;}  [data-col="17"] { left:2598px;}  [data-col="16"] { left:2436px;}  [data-col="15"] { left:2274px;}  [data-col="14"] { left:2112px;}  [data-col="13"] { left:1950px;}  [data-col="12"] { left:1788px;}  [data-col="11"] { left:1626px;}  [data-col="10"] { left:1464px;}  [data-col="9"] { left:1302px;}  [data-col="8"] { left:1140px;}  [data-col="7"] { left:978px;}  [data-col="6"] { left:816px;}  [data-col="5"] { left:654px;}  [data-col="4"] { left:492px;}  [data-col="3"] { left:330px;}  [data-col="2"] { left:168px;}  [data-col="1"] { left:6px;}  [data-row="16"] { top:2436px;}  [data-row="15"] { top:2274px;}  [data-row="14"] { top:2112px;}  [data-row="13"] { top:1950px;}  [data-row="12"] { top:1788px;}  [data-row="11"] { top:1626px;}  [data-row="10"] { top:1464px;}  [data-row="9"] { top:1302px;}  [data-row="8"] { top:1140px;}  [data-row="7"] { top:978px;}  [data-row="6"] { top:816px;}  [data-row="5"] { top:654px;}  [data-row="4"] { top:492px;}  [data-row="3"] { top:330px;}  [data-row="2"] { top:168px;}  [data-row="1"] { top:6px;}  [data-sizey="1"] { height:150px;} [data-sizey="2"] { height:312px;} [data-sizey="3"] { height:474px;} [data-sizey="4"] { height:636px;} [data-sizey="5"] { height:798px;} [data-sizey="6"] { height:960px;} [data-sizey="7"] { height:1122px;} [data-sizey="8"] { height:1284px;} [data-sizey="9"] { height:1446px;} [data-sizey="10"] { height:1608px;} [data-sizey="11"] { height:1770px;} [data-sizey="12"] { height:1932px;} [data-sizey="13"] { height:2094px;} [data-sizey="14"] { height:2256px;} [data-sizey="15"] { height:2418px;} [data-sizex="1"] { width:150px;} [data-sizex="2"] { width:312px;} [data-sizex="3"] { width:474px;} [data-sizex="4"] { width:636px;} [data-sizex="5"] { width:798px;} [data-sizex="6"] { width:960px;} [data-sizex="7"] { width:1122px;} [data-sizex="8"] { width:1284px;} [data-sizex="9"] { width:1446px;} [data-sizex="10"] { width:1608px;} [data-sizex="11"] { width:1770px;}</style><style type="text/css"> [data-col="23"] { left:3570px;}  [data-col="22"] { left:3408px;}  [data-col="21"] { left:3246px;}  [data-col="20"] { left:3084px;}  [data-col="19"] { left:2922px;}  [data-col="18"] { left:2760px;}  [data-col="17"] { left:2598px;}  [data-col="16"] { left:2436px;}  [data-col="15"] { left:2274px;}  [data-col="14"] { left:2112px;}  [data-col="13"] { left:1950px;}  [data-col="12"] { left:1788px;}  [data-col="11"] { left:1626px;}  [data-col="10"] { left:1464px;}  [data-col="9"] { left:1302px;}  [data-col="8"] { left:1140px;}  [data-col="7"] { left:978px;}  [data-col="6"] { left:816px;}  [data-col="5"] { left:654px;}  [data-col="4"] { left:492px;}  [data-col="3"] { left:330px;}  [data-col="2"] { left:168px;}  [data-col="1"] { left:6px;}  [data-row="17"] { top:2598px;}  [data-row="16"] { top:2436px;}  [data-row="15"] { top:2274px;}  [data-row="14"] { top:2112px;}  [data-row="13"] { top:1950px;}  [data-row="12"] { top:1788px;}  [data-row="11"] { top:1626px;}  [data-row="10"] { top:1464px;}  [data-row="9"] { top:1302px;}  [data-row="8"] { top:1140px;}  [data-row="7"] { top:978px;}  [data-row="6"] { top:816px;}  [data-row="5"] { top:654px;}  [data-row="4"] { top:492px;}  [data-row="3"] { top:330px;}  [data-row="2"] { top:168px;}  [data-row="1"] { top:6px;}  [data-sizey="1"] { height:150px;} [data-sizey="2"] { height:312px;} [data-sizey="3"] { height:474px;} [data-sizey="4"] { height:636px;} [data-sizey="5"] { height:798px;} [data-sizey="6"] { height:960px;} [data-sizey="7"] { height:1122px;} [data-sizey="8"] { height:1284px;} [data-sizey="9"] { height:1446px;} [data-sizey="10"] { height:1608px;} [data-sizey="11"] { height:1770px;} [data-sizey="12"] { height:1932px;} [data-sizey="13"] { height:2094px;} [data-sizey="14"] { height:2256px;} [data-sizey="15"] { height:2418px;} [data-sizey="16"] { height:2580px;} [data-sizex="1"] { width:150px;} [data-sizex="2"] { width:312px;} [data-sizex="3"] { width:474px;} [data-sizex="4"] { width:636px;} [data-sizex="5"] { width:798px;} [data-sizex="6"] { width:960px;} [data-sizex="7"] { width:1122px;} [data-sizex="8"] { width:1284px;} [data-sizex="9"] { width:1446px;} [data-sizex="10"] { width:1608px;} [data-sizex="11"] { width:1770px;}</style><style type="text/css"> [data-col="23"] { left:3570px;}  [data-col="22"] { left:3408px;}  [data-col="21"] { left:3246px;}  [data-col="20"] { left:3084px;}  [data-col="19"] { left:2922px;}  [data-col="18"] { left:2760px;}  [data-col="17"] { left:2598px;}  [data-col="16"] { left:2436px;}  [data-col="15"] { left:2274px;}  [data-col="14"] { left:2112px;}  [data-col="13"] { left:1950px;}  [data-col="12"] { left:1788px;}  [data-col="11"] { left:1626px;}  [data-col="10"] { left:1464px;}  [data-col="9"] { left:1302px;}  [data-col="8"] { left:1140px;}  [data-col="7"] { left:978px;}  [data-col="6"] { left:816px;}  [data-col="5"] { left:654px;}  [data-col="4"] { left:492px;}  [data-col="3"] { left:330px;}  [data-col="2"] { left:168px;}  [data-col="1"] { left:6px;}  [data-row="18"] { top:2760px;}  [data-row="17"] { top:2598px;}  [data-row="16"] { top:2436px;}  [data-row="15"] { top:2274px;}  [data-row="14"] { top:2112px;}  [data-row="13"] { top:1950px;}  [data-row="12"] { top:1788px;}  [data-row="11"] { top:1626px;}  [data-row="10"] { top:1464px;}  [data-row="9"] { top:1302px;}  [data-row="8"] { top:1140px;}  [data-row="7"] { top:978px;}  [data-row="6"] { top:816px;}  [data-row="5"] { top:654px;}  [data-row="4"] { top:492px;}  [data-row="3"] { top:330px;}  [data-row="2"] { top:168px;}  [data-row="1"] { top:6px;}  [data-sizey="1"] { height:150px;} [data-sizey="2"] { height:312px;} [data-sizey="3"] { height:474px;} [data-sizey="4"] { height:636px;} [data-sizey="5"] { height:798px;} [data-sizey="6"] { height:960px;} [data-sizey="7"] { height:1122px;} [data-sizey="8"] { height:1284px;} [data-sizey="9"] { height:1446px;} [data-sizey="10"] { height:1608px;} [data-sizey="11"] { height:1770px;} [data-sizey="12"] { height:1932px;} [data-sizey="13"] { height:2094px;} [data-sizey="14"] { height:2256px;} [data-sizey="15"] { height:2418px;} [data-sizey="16"] { height:2580px;} [data-sizey="17"] { height:2742px;} [data-sizex="1"] { width:150px;} [data-sizex="2"] { width:312px;} [data-sizex="3"] { width:474px;} [data-sizex="4"] { width:636px;} [data-sizex="5"] { width:798px;} [data-sizex="6"] { width:960px;} [data-sizex="7"] { width:1122px;} [data-sizex="8"] { width:1284px;} [data-sizex="9"] { width:1446px;} [data-sizex="10"] { width:1608px;} [data-sizex="11"] { width:1770px;}</style><style type="text/css"> [data-col="23"] { left:3570px;}  [data-col="22"] { left:3408px;}  [data-col="21"] { left:3246px;}  [data-col="20"] { left:3084px;}  [data-col="19"] { left:2922px;}  [data-col="18"] { left:2760px;}  [data-col="17"] { left:2598px;}  [data-col="16"] { left:2436px;}  [data-col="15"] { left:2274px;}  [data-col="14"] { left:2112px;}  [data-col="13"] { left:1950px;}  [data-col="12"] { left:1788px;}  [data-col="11"] { left:1626px;}  [data-col="10"] { left:1464px;}  [data-col="9"] { left:1302px;}  [data-col="8"] { left:1140px;}  [data-col="7"] { left:978px;}  [data-col="6"] { left:816px;}  [data-col="5"] { left:654px;}  [data-col="4"] { left:492px;}  [data-col="3"] { left:330px;}  [data-col="2"] { left:168px;}  [data-col="1"] { left:6px;}  [data-row="19"] { top:2922px;}  [data-row="18"] { top:2760px;}  [data-row="17"] { top:2598px;}  [data-row="16"] { top:2436px;}  [data-row="15"] { top:2274px;}  [data-row="14"] { top:2112px;}  [data-row="13"] { top:1950px;}  [data-row="12"] { top:1788px;}  [data-row="11"] { top:1626px;}  [data-row="10"] { top:1464px;}  [data-row="9"] { top:1302px;}  [data-row="8"] { top:1140px;}  [data-row="7"] { top:978px;}  [data-row="6"] { top:816px;}  [data-row="5"] { top:654px;}  [data-row="4"] { top:492px;}  [data-row="3"] { top:330px;}  [data-row="2"] { top:168px;}  [data-row="1"] { top:6px;}  [data-sizey="1"] { height:150px;} [data-sizey="2"] { height:312px;} [data-sizey="3"] { height:474px;} [data-sizey="4"] { height:636px;} [data-sizey="5"] { height:798px;} [data-sizey="6"] { height:960px;} [data-sizey="7"] { height:1122px;} [data-sizey="8"] { height:1284px;} [data-sizey="9"] { height:1446px;} [data-sizey="10"] { height:1608px;} [data-sizey="11"] { height:1770px;} [data-sizey="12"] { height:1932px;} [data-sizey="13"] { height:2094px;} [data-sizey="14"] { height:2256px;} [data-sizey="15"] { height:2418px;} [data-sizey="16"] { height:2580px;} [data-sizey="17"] { height:2742px;} [data-sizey="18"] { height:2904px;} [data-sizex="1"] { width:150px;} [data-sizex="2"] { width:312px;} [data-sizex="3"] { width:474px;} [data-sizex="4"] { width:636px;} [data-sizex="5"] { width:798px;} [data-sizex="6"] { width:960px;} [data-sizex="7"] { width:1122px;} [data-sizex="8"] { width:1284px;} [data-sizex="9"] { width:1446px;} [data-sizex="10"] { width:1608px;} [data-sizex="11"] { width:1770px;}</style><style type="text/css"> [data-col="23"] { left:3570px;}  [data-col="22"] { left:3408px;}  [data-col="21"] { left:3246px;}  [data-col="20"] { left:3084px;}  [data-col="19"] { left:2922px;}  [data-col="18"] { left:2760px;}  [data-col="17"] { left:2598px;}  [data-col="16"] { left:2436px;}  [data-col="15"] { left:2274px;}  [data-col="14"] { left:2112px;}  [data-col="13"] { left:1950px;}  [data-col="12"] { left:1788px;}  [data-col="11"] { left:1626px;}  [data-col="10"] { left:1464px;}  [data-col="9"] { left:1302px;}  [data-col="8"] { left:1140px;}  [data-col="7"] { left:978px;}  [data-col="6"] { left:816px;}  [data-col="5"] { left:654px;}  [data-col="4"] { left:492px;}  [data-col="3"] { left:330px;}  [data-col="2"] { left:168px;}  [data-col="1"] { left:6px;}  [data-row="20"] { top:3084px;}  [data-row="19"] { top:2922px;}  [data-row="18"] { top:2760px;}  [data-row="17"] { top:2598px;}  [data-row="16"] { top:2436px;}  [data-row="15"] { top:2274px;}  [data-row="14"] { top:2112px;}  [data-row="13"] { top:1950px;}  [data-row="12"] { top:1788px;}  [data-row="11"] { top:1626px;}  [data-row="10"] { top:1464px;}  [data-row="9"] { top:1302px;}  [data-row="8"] { top:1140px;}  [data-row="7"] { top:978px;}  [data-row="6"] { top:816px;}  [data-row="5"] { top:654px;}  [data-row="4"] { top:492px;}  [data-row="3"] { top:330px;}  [data-row="2"] { top:168px;}  [data-row="1"] { top:6px;}  [data-sizey="1"] { height:150px;} [data-sizey="2"] { height:312px;} [data-sizey="3"] { height:474px;} [data-sizey="4"] { height:636px;} [data-sizey="5"] { height:798px;} [data-sizey="6"] { height:960px;} [data-sizey="7"] { height:1122px;} [data-sizey="8"] { height:1284px;} [data-sizey="9"] { height:1446px;} [data-sizey="10"] { height:1608px;} [data-sizey="11"] { height:1770px;} [data-sizey="12"] { height:1932px;} [data-sizey="13"] { height:2094px;} [data-sizey="14"] { height:2256px;} [data-sizey="15"] { height:2418px;} [data-sizey="16"] { height:2580px;} [data-sizey="17"] { height:2742px;} [data-sizey="18"] { height:2904px;} [data-sizey="19"] { height:3066px;} [data-sizex="1"] { width:150px;} [data-sizex="2"] { width:312px;} [data-sizex="3"] { width:474px;} [data-sizex="4"] { width:636px;} [data-sizex="5"] { width:798px;} [data-sizex="6"] { width:960px;} [data-sizex="7"] { width:1122px;} [data-sizex="8"] { width:1284px;} [data-sizex="9"] { width:1446px;} [data-sizex="10"] { width:1608px;} [data-sizex="11"] { width:1770px;}</style><style type="text/css"> [data-col="23"] { left:3570px;}  [data-col="22"] { left:3408px;}  [data-col="21"] { left:3246px;}  [data-col="20"] { left:3084px;}  [data-col="19"] { left:2922px;}  [data-col="18"] { left:2760px;}  [data-col="17"] { left:2598px;}  [data-col="16"] { left:2436px;}  [data-col="15"] { left:2274px;}  [data-col="14"] { left:2112px;}  [data-col="13"] { left:1950px;}  [data-col="12"] { left:1788px;}  [data-col="11"] { left:1626px;}  [data-col="10"] { left:1464px;}  [data-col="9"] { left:1302px;}  [data-col="8"] { left:1140px;}  [data-col="7"] { left:978px;}  [data-col="6"] { left:816px;}  [data-col="5"] { left:654px;}  [data-col="4"] { left:492px;}  [data-col="3"] { left:330px;}  [data-col="2"] { left:168px;}  [data-col="1"] { left:6px;}  [data-row="21"] { top:3246px;}  [data-row="20"] { top:3084px;}  [data-row="19"] { top:2922px;}  [data-row="18"] { top:2760px;}  [data-row="17"] { top:2598px;}  [data-row="16"] { top:2436px;}  [data-row="15"] { top:2274px;}  [data-row="14"] { top:2112px;}  [data-row="13"] { top:1950px;}  [data-row="12"] { top:1788px;}  [data-row="11"] { top:1626px;}  [data-row="10"] { top:1464px;}  [data-row="9"] { top:1302px;}  [data-row="8"] { top:1140px;}  [data-row="7"] { top:978px;}  [data-row="6"] { top:816px;}  [data-row="5"] { top:654px;}  [data-row="4"] { top:492px;}  [data-row="3"] { top:330px;}  [data-row="2"] { top:168px;}  [data-row="1"] { top:6px;}  [data-sizey="1"] { height:150px;} [data-sizey="2"] { height:312px;} [data-sizey="3"] { height:474px;} [data-sizey="4"] { height:636px;} [data-sizey="5"] { height:798px;} [data-sizey="6"] { height:960px;} [data-sizey="7"] { height:1122px;} [data-sizey="8"] { height:1284px;} [data-sizey="9"] { height:1446px;} [data-sizey="10"] { height:1608px;} [data-sizey="11"] { height:1770px;} [data-sizey="12"] { height:1932px;} [data-sizey="13"] { height:2094px;} [data-sizey="14"] { height:2256px;} [data-sizey="15"] { height:2418px;} [data-sizey="16"] { height:2580px;} [data-sizey="17"] { height:2742px;} [data-sizey="18"] { height:2904px;} [data-sizey="19"] { height:3066px;} [data-sizey="20"] { height:3228px;} [data-sizex="1"] { width:150px;} [data-sizex="2"] { width:312px;} [data-sizex="3"] { width:474px;} [data-sizex="4"] { width:636px;} [data-sizex="5"] { width:798px;} [data-sizex="6"] { width:960px;} [data-sizex="7"] { width:1122px;} [data-sizex="8"] { width:1284px;} [data-sizex="9"] { width:1446px;} [data-sizex="10"] { width:1608px;} [data-sizex="11"] { width:1770px;}</style></head>
+
+  <body>
+    <div id="log-panel" style="bottom: 110%" ng-controller="Core.ConsoleController" class="ng-scope">
+      <div>
+        <ul id="log-panel-statements"><li class="INFO">[<span class="green">RHBranding</span>] Red Hat theme loaded</li><li class="INFO">[<span class="green">Core</span>] Management Console started</li><li class="INFO">[<span class="green">RBAC</span>] Using mbean org.apache.karaf:type=security,area=jmx,name=root for client-side role based access control</li></ul>
+        <div id="close" log-toggler="">
+          <i class="icon-chevron-up"></i>
+        </div>
+        <div id="copy">
+          <i class="span2 icon-copy" title="Click to copy log to clipboard" zero-clipboard="" use-callback="setHandler(clip)"></i>
+          <i class="span3 icon-trash" title="Click to clear log" zero-clipboard="" use-callback="setHandler(clip)"></i>
+        </div>
+      </div>
+    </div>
+
+    <div id="main-body" ng-controller="Core.AppController" style="" class="ng-scope">
+      <!--  navbar-inverse -->
+      <div id="main-nav" class="navbar navbar-fixed-top ng-scope" ng-show="!fullScreen()" ng-controller="Core.NavBarController" style="">
+
+        <div class="navbar-inner main-nav-upper">
+
+          <div class="container">
+            <div class="pull-left">
+              <a ng-href="#" class="brand" data-placement="bottom" ng-include="'app/core/html/branding.html'" data-original-title="Go to home" href="#"><img class="no-shadow ng-scope with-text" ng-show="branding.appLogo" ng-src="../redhat-branding/plugin/img/logo.svg" ng-class="branding.logoClass()" src="../redhat-branding/plugin/img/logo.svg">
+<strong ng-hide="branding.logoOnly" ng-bind-html-unsafe="branding.appName" class="ng-scope ng-binding">Management Console</strong></a>
+            </div>
+
+            <div class="pull-right">
+              <ul class="nav nav-tabs pull-right">
+                <!-- dynamic links, hook for plugins-->
+                <li ng-show="loggedIn() &amp;&amp; isCustomLinkSet() > 0 " class="dropdown" style="display: none;">
+                  <a ng-href="#" data-placement="bottom" class="dropdown-toggle" data-toggle="dropdown" data-original-title="Extra" href="#">
+                    <i class="icon-user fixme"></i>&nbsp;&nbsp;<span class="ng-binding">Extra</span>&nbsp;<span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu right">
+                    <!-- ngRepeat: entry in navBarViewCustomLinks.list -->
+                  </ul>
+                </li>
+
+                <li ng-show="loggedIn()" style="">
+                  <a ng-href="" data-placement="bottom" log-toggler="" data-original-title="Show the logging console">
+                    <i class="icon-desktop"></i>
+                  </a>
+                </li>
+                <li ng-show="loggedIn()" ng-class="{active : isActive('#/help')}" style="">
+                  <a ng-href="#/help" data-placement="bottom" data-original-title="Read the help about how to use this console" href="#/help">
+                    <i class="icon-question-sign"></i>
+                  </a>
+                </li>
+
+                <li ng-show="loggedIn() &amp;&amp; hasMBeans()" class="dropdown" style="">
+                  <a ng-href="#" data-placement="bottom" class="dropdown-toggle" data-toggle="dropdown" data-original-title="Preferences and log out" href="#">
+                    <i class="icon-user fixme"></i>&nbsp;&nbsp;<span class="ng-binding">fafram</span>&nbsp;<span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu right">
+                    <li class="item">
+                      <a href="" ng-click="showPreferences()" data-placement="bottom" data-original-title="Edit your preferences">
+                        <i class="icon-cogs fixme"></i> Preferences
+                      </a>
+                    </li>
+
+                    <li class="item" ng-show="showLogout()" style="">
+                      <a href="" data-placement="bottom" ng-click="logout()" data-original-title="Log out">
+                        <i class="icon-signout fixme"></i> Log out
+                      </a>
+                    </li>
+
+                    <li class="item">
+                      <a ng-href="#/about" data-placement="bottom" data-original-title="About" class="ng-binding" href="#/about">
+                        <i class="icon-info"></i> About 
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>
+
+                <li ng-hide="loggedIn()" ng-class="{active : isActive('#/login')}" class="" style="display: none;">
+                  <a ng-href="#/login" data-placement="bottom" data-original-title="Log in" href="#/login">
+                    <i class="icon-user"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="navbar-inner main-nav-lower" ng-show="!login()" style="">
+          <div class="container">
+            <ul ng-show="loggedIn()" class="nav" hawtio-auto-dropdown="" style="">
+              <li ng-show="loggedIn() &amp;&amp; (perspectives.length > 1 || recentConnections.length)" class="dropdown perspective-selector" style="display: none;">
+                <a href="#" class="dropdown-toggle">
+                  <span config="perspectiveDetails.perspective.icon">
+  <span ng-show="icon &amp;&amp; icon.type &amp;&amp; icon.src" title="Java" ng-switch="icon.type" style="">
+    <!-- ngSwitchWhen: icon -->
+    <!-- ngSwitchWhen: img --><img ng-switch-when="img" ng-src="img/icons/java.svg" class="" src="img/icons/java.svg">
+  </span>
+  <span ng-hide="icon &amp;&amp; icon.type &amp;&amp; icon.src" style="display: none;">
+    &nbsp;
+  </span>
+</span>
+                  <span ng-bind="perspectiveDetails.perspective.label || 'Perspective'" class="ng-binding">Container</span>
+                  <span ng-show="perspectives.length > 1" class="caret" style="display: none;"></span>
+                </a>
+                <div class="dropdown-menu">
+                  <div ng-show="perspectives.length > 1" style="display: none;">
+                    <p>Perspectives</p>
+                    <ul class="unstyled">
+                      <!-- ngRepeat: perspective in perspectives track by $index --><li ng-repeat="perspective in perspectives track by $index" class="ng-scope">
+                        <a href="" ng-click="switchPerspective(perspective)" ng-hide="perspectiveDetails.perspective.id === perspective.id" data-placement="bottom" class="ng-binding" style="display: none;">
+                          <span config="perspective.icon">
+  <span ng-show="icon &amp;&amp; icon.type &amp;&amp; icon.src" title="Java" ng-switch="icon.type">
+    <!-- ngSwitchWhen: icon -->
+    <!-- ngSwitchWhen: img --><img ng-switch-when="img" ng-src="img/icons/java.svg" class="" src="img/icons/java.svg">
+  </span>
+  <span ng-hide="icon &amp;&amp; icon.type &amp;&amp; icon.src" style="display: none;">
+    &nbsp;
+  </span>
+</span>
+                          Container</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div ng-show="recentConnections.length" style="display: none;">
+                    <p>Recent Connections</p>
+                    <ul class="unstyled">
+                      <li>
+                        <a href="" ng-click="goHome()">Console</a>
+                     </li>
+                      <!-- ngRepeat: connection in recentConnections track by $index -->
+                      <li class="clear-recent">
+                        <a href="" ng-click="clearConnections()">Clear Recent</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              <!-- ngRepeat: nav in topLevelTabs track by $index --><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope">
+                <a ng-href="#/jmx/attributes?tab=activemq" data-placement="bottom" ng-bind="nav.content" data-original-title="Manage your ActiveMQ message brokers" class="ng-binding" href="#/jmx/attributes?tab=activemq">ActiveMQ</a>
+              </li><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope">
+                <a ng-href="#/jvm/connect" data-placement="bottom" ng-bind="nav.content" data-original-title="Connect to other JVMs" class="ng-binding" href="#/jvm/connect">Connect</a>
+              </li><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope active">
+                <a ng-href="#/dashboard/idx/0?tab=dashboard" data-placement="bottom" ng-bind="nav.content" data-original-title="View and edit your own custom dashboards" class="ng-binding" href="#/dashboard/idx/0?tab=dashboard" style="">Dashboard</a>
+              </li><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope">
+                <a ng-href="#/health" data-placement="bottom" ng-bind="nav.content" data-original-title="View the health of the various sub systems" class="ng-binding" href="#/health">Health</a>
+              </li><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope">
+                <a ng-href="#/jetty/applications" data-placement="bottom" ng-bind="nav.content" data-original-title="Manage your Jetty container" class="ng-binding" href="#/jetty/applications">Jetty</a>
+              </li><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope">
+                <a ng-href="#/jmx/attributes" data-placement="bottom" ng-bind="nav.content" data-original-title="View the JMX MBeans in this process" class="ng-binding" href="#/jmx/attributes">JMX</a>
+              </li><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope">
+                <a ng-href="#/logs" data-placement="bottom" ng-bind="nav.content" data-original-title="View and search the logs of this container" class="ng-binding" href="#/logs">Logs</a>
+              </li><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope">
+                <a ng-href="#/osgi/bundle-list" data-placement="bottom" ng-bind="nav.content" data-original-title="Visualise and manage the bundles and services in this OSGi container" class="ng-binding" href="#/osgi/bundle-list">OSGi</a>
+              </li><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope">
+                <a ng-href="#/gogo" data-placement="bottom" ng-bind="nav.content" data-original-title="Open a terminal to the Karaf server" class="ng-binding" href="#/gogo">Terminal</a>
+              </li><li ng-repeat="nav in topLevelTabs track by $index" ng-class="{active : isActive(nav)}" ng-show="isValid(nav)" class="ng-scope">
+                <a ng-href="#/threads" data-placement="bottom" ng-bind="nav.content" data-original-title="JVM Threads" class="ng-binding" href="#/threads">Threads</a>
+              </li>
+              <li class="dropdown overflow" style="float: right !important; visibility: hidden;">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></a>
+                <ul class="dropdown-menu right"></ul>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="pref-slideout slideout right slideout right" hawtio-slideout="showPrefs" title="Management Console Preferences" style="top: 10%; height: 80%;">
+  <div class="slideout-title">
+    <div class="mouse-pointer pull-right" ng-click="hidePanel($event)" title="Close panel">
+      <i class="icon-remove"></i>
+    </div>
+    <span class="ng-binding">Management Console Preferences</span>
+  </div>
+  <div class="slideout-content">
+    <div class="slideout-body"></div>
+  </div>
+</div>
+
+      <div id="main" class="container-fluid ng-scope" ng-controller="Core.ViewController" style="min-height: 912px;">
+        <div ng-include="" src="viewPartial" style="padding-left: 0px;"><ul class="nav nav-tabs ng-scope" ng-controller="Dashboard.NavBarController">
+  <!-- ngRepeat: dash in _dashboards --><li ng-repeat="dash in _dashboards" ng-class="{active : isActive(dash)}" class="ng-scope active">
+    <span class="a" ng-click="navigateTo('/dashboard/id/4e9d116173ca41767e?tab=dashboard')">
+      <editable-property class="inline-block ng-scope ng-pristine ng-valid" on-save="onTabRenamed(dash)" property="title" ng-model="dash"><div ng-mouseenter="showEdit()" ng-mouseleave="hideEdit()" class="ep ng-binding" ng-dblclick="doEdit()">
+  Monitor&nbsp;<i class="ep-edit icon-pencil" title="Edit this item" ng-click="doEdit(); $event.stopPropagation();" no-click="" style="display: none;"></i>
+</div>
+<div class="ep editing" ng-show="editing" no-click="" style="display: none;">
+  <form class="form-inline no-bottom-margin ng-pristine ng-valid" ng-submit="saveEdit()">
+    <fieldset>
+      <span ng-switch="inputType">
+        <!-- ngSwitchWhen: number -->
+        <!-- ngSwitchWhen: password -->
+        <!-- ngSwitchDefault:  --><span ng-switch-default="" class="ng-scope">
+          <input size="7" ng-style="getInputStyle()" value="Monitor" style="width: 5.83333em;" type="text">
+        </span>
+      </span>
+      <i class="green clickable icon-ok icon1point5x" title="Save changes" ng-click="saveEdit()"></i>
+      <i class="red clickable icon-remove icon1point5x" title="Discard changes" ng-click="stopEdit()"></i>
+    </fieldset>
+  </form>
+</div>
+</editable-property>
+    </span>
+  </li>
+  <li class="pull-right" ng-class="{active : isEditing()}">
+    <a ng-href="#/dashboard/edit?tab=dashboard" title="Manage the dashboards; letting you add, duplicate or remove dashboards" data-placement="bottom" href="#/dashboard/edit?tab=dashboard">
+      <i class="icon-edit"></i> Manage</a></li>
+</ul>
+<div class="row-fluid ng-scope">
+  <div ng-view=""><script type="text/ng-template" id="widgetTemplate" class="ng-scope">
+  <div class="widget-area" data-widgetId="{{widget.id}}">
+    <div class="widget-title">
+      <div class="row-fluid">
+        <div class="pull-left">
+          <editable-property ng-model="widget" property="title" on-save="onWidgetRenamed(widget)"></editable-property>
+        </div>
+        <div class="pull-right">
+          <i class="icon-remove" title="Removes this view from the dashboard" ng-click="removeWidget(widget)"></i>
+        </div>
+      </div>
+    </div>
+    <div class="widget-body">
+      <div ng-include="widget.include"></div>
+    </div>
+  </div>
+</script>
+
+<!--
+<div class="gridster" ng-controller="Dashboard.DashboardController">
+  <ul id="widgets">
+  </ul>
+</div>
+-->
+
+<div class="row-fluid ng-scope">
+  <div class="span12 gridster ready">
+    <ul id="widgets" hawtio-dashboard="" style="position: relative; height: 648px;"><li class="grid-block gs_w ui-resizable" style="display: list-item; position: absolute;" data-col="1" data-row="1" data-sizex="3" data-sizey="4">
+  <div class="widget-area ng-scope" data-widgetid="w1">
+    <div class="widget-title">
+      <div class="row-fluid">
+        <div class="pull-left">
+          <editable-property ng-model="widget" property="title" on-save="onWidgetRenamed(widget)" class="ng-scope ng-pristine ng-valid"><div ng-mouseenter="showEdit()" ng-mouseleave="hideEdit()" class="ep ng-binding" ng-dblclick="doEdit()">
+  Operating System&nbsp;<i class="ep-edit icon-pencil" title="Edit this item" ng-click="doEdit(); $event.stopPropagation();" no-click="" style="display: none;"></i>
+</div>
+<div class="ep editing" ng-show="editing" no-click="" style="display: none;">
+  <form class="form-inline no-bottom-margin ng-pristine ng-valid" ng-submit="saveEdit()">
+    <fieldset>
+      <span ng-switch="inputType">
+        <!-- ngSwitchWhen: number -->
+        <!-- ngSwitchWhen: password -->
+        <!-- ngSwitchDefault:  --><span ng-switch-default="" class="ng-scope">
+          <input size="16" ng-style="getInputStyle()" value="Operating System" style="width: 13.3333em;" type="text">
+        </span>
+      </span>
+      <i class="green clickable icon-ok icon1point5x" title="Save changes" ng-click="saveEdit()"></i>
+      <i class="red clickable icon-remove icon1point5x" title="Discard changes" ng-click="stopEdit()"></i>
+    </fieldset>
+  </form>
+</div>
+</editable-property>
+        </div>
+        <div class="pull-right">
+          <i class="icon-remove" title="Removes this view from the dashboard" ng-click="removeWidget(widget)"></i>
+        </div>
+      </div>
+    </div>
+    <div class="widget-body">
+      <div ng-include="widget.include"><script type="text/ng-template" id="gridTemplate" class="ng-scope">
+  <table id="attributesGrid"
+         class="table table-condensed table-striped"
+         hawtio-simple-table="gridOptions">
+  </table>
+</script>
+
+<div ng-controller="Jmx.AttributesController" class="ng-scope">
+  <div ng-include="" src="toolBarTemplate()"><div class="pull-right ng-scope">
+  <div class="inline-block section-filter ng-pristine ng-valid" ng-model="gridOptions.filterOptions.filterText" placeholder="Filter..." save-as="empty-filter-text">
+  <input class="search-query ng-valid ng-dirty has-text" ng-class="getClass()" ng-model="ngModel" placeholder="Filter..." style="" type="text">
+  <i class="icon-remove clickable" title="Clear Filter" ng-click="ngModel = ''"></i>
+</div>
+</div>
+</div>
+
+  <div class="attributes-wrapper gridStyle" style="min-height: 937px; height: 937px;">
+    <div compile="attributes">
+  <table id="attributesGrid" class="table table-condensed table-striped ng-isolate-scope ng-scope" hawtio-simple-table="gridOptions"><thead class="ng-scope"><tr>
+<th class="clickable no-fade table-header ng-binding asc" ng-click="sortBy('name')" ng-class="getClass('name')">Property<span class="indicator"></span></th>
+<th class="clickable no-fade table-header ng-binding" ng-click="sortBy('value')" ng-class="getClass('value')">Value<span class="indicator"></span></th>
+</tr></thead>
+<tbody class="ng-scope"><!-- ngRepeat: row in rows track by $index --><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="Arch" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Arch</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="amd64" ng-bind-html-unsafe="row.entity.summary">amd64</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope">
+<td><div class="ngCellText" title="AvailableProcessors" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Available processors</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="4" ng-bind-html-unsafe="row.entity.summary">4</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="CommittedVirtualMemorySize" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Committed virtual memory size</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="5404073984" ng-bind-html-unsafe="row.entity.summary">5404073984</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="FreePhysicalMemorySize" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Free physical memory size</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="164601856" ng-bind-html-unsafe="row.entity.summary">164601856</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="FreeSwapSpaceSize" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Free swap space size</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="12561936384" ng-bind-html-unsafe="row.entity.summary">12561936384</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="MaxFileDescriptorCount" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"><i class="icon-smile clickable ng-scope" title="Add Donut chart to Dashboard" ng-click="row.entity.addChartToDashboard('donut')"></i>&nbsp;</div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Max file descriptor count</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="1048576" ng-bind-html-unsafe="row.entity.summary">1048576</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="Name" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Name</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="Linux" ng-bind-html-unsafe="row.entity.summary">Linux</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="ObjectName" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Object name</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="java.lang:type=OperatingSystem" ng-bind-html-unsafe="row.entity.summary">java.lang:type=OperatingSystem</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="OpenFileDescriptorCount" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Open file descriptor count</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="452" ng-bind-html-unsafe="row.entity.summary">452</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope">
+<td><div class="ngCellText" title="ProcessCpuLoad" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"><i class="icon-bar-chart clickable ng-scope" title="Add Area chart to Dashboard" ng-click="row.entity.addChartToDashboard('area')"></i>&nbsp;</div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Process cpu load</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="0.000488850642095434" ng-bind-html-unsafe="row.entity.summary">0.000488850642095434</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope">
+<td><div class="ngCellText" title="ProcessCpuTime" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"><i class="icon-bar-chart clickable ng-scope" title="Add Area chart to Dashboard" ng-click="row.entity.addChartToDashboard('area')"></i>&nbsp;</div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Process cpu time</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="80100000000" ng-bind-html-unsafe="row.entity.summary">80100000000</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="SystemCpuLoad" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"><i class="icon-bar-chart clickable ng-scope" title="Add Area chart to Dashboard" ng-click="row.entity.addChartToDashboard('area')"></i>&nbsp;</div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">System cpu load</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="0.9959677419354839" ng-bind-html-unsafe="row.entity.summary">0.9959677419354839</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="SystemLoadAverage" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">System load average</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="7.55" ng-bind-html-unsafe="row.entity.summary">7.55</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="TotalPhysicalMemorySize" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Total physical memory size</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="12277895168" ng-bind-html-unsafe="row.entity.summary">12277895168</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="TotalSwapSpaceSize" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"><i class="icon-smile clickable ng-scope" title="Add Donut chart to Dashboard" ng-click="row.entity.addChartToDashboard('donut')"></i>&nbsp;</div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Total swap space size</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="12561936384" ng-bind-html-unsafe="row.entity.summary">12561936384</div></td>
+</tr><tr ng-repeat="row in rows track by $index" ng-show="showRow(row)" ng-class="{'selected': isSelected(row)}" class="ng-scope" style="display: none;">
+<td><div class="ngCellText" title="Version" data-placement="bottom"><div ng-show="!inDashboard" class="inline" compile="row.entity.getDashboardWidgets()"></div><a href="" ng-click="row.entity.onViewAttribute()" class="ng-binding">Version</a></div></td>
+<td><div class="ngCellText mouse-pointer ng-binding" ng-click="row.entity.onViewAttribute()" title="4.13.0-37-generic" ng-bind-html-unsafe="row.entity.summary">4.13.0-37-generic</div></td>
+</tr></tbody></table>
+</div>
+  </div>
+
+  <!-- modal dialog to show/edit the attribute -->
+  
+
+</div>
+</div>
+    </div>
+  </div>
+<div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1000;"></div></li><li class="grid-block gs_w ui-resizable" style="display: list-item; position: absolute;" data-col="6" data-row="1" data-sizex="2" data-sizey="2">
+  <div class="widget-area ng-scope" data-widgetid="w3">
+    <div class="widget-title">
+      <div class="row-fluid">
+        <div class="pull-left">
+          <editable-property ng-model="widget" property="title" on-save="onWidgetRenamed(widget)" class="ng-scope ng-pristine ng-valid"><div ng-mouseenter="showEdit()" ng-mouseleave="hideEdit()" class="ep ng-binding" ng-dblclick="doEdit()">
+  Java Heap Memory&nbsp;<i class="ep-edit icon-pencil" title="Edit this item" ng-click="doEdit(); $event.stopPropagation();" no-click="" style="display: none;"></i>
+</div>
+<div class="ep editing" ng-show="editing" no-click="" style="display: none;">
+  <form class="form-inline no-bottom-margin ng-pristine ng-valid" ng-submit="saveEdit()">
+    <fieldset>
+      <span ng-switch="inputType">
+        <!-- ngSwitchWhen: number -->
+        <!-- ngSwitchWhen: password -->
+        <!-- ngSwitchDefault:  --><span ng-switch-default="" class="ng-scope">
+          <input size="16" ng-style="getInputStyle()" value="Java Heap Memory" style="width: 13.3333em;" type="text">
+        </span>
+      </span>
+      <i class="green clickable icon-ok icon1point5x" title="Save changes" ng-click="saveEdit()"></i>
+      <i class="red clickable icon-remove icon1point5x" title="Discard changes" ng-click="stopEdit()"></i>
+    </fieldset>
+  </form>
+</div>
+</editable-property>
+        </div>
+        <div class="pull-right">
+          <i class="icon-remove" title="Removes this view from the dashboard" ng-click="removeWidget(widget)"></i>
+        </div>
+      </div>
+    </div>
+    <div class="widget-body">
+      <div ng-include="widget.include"><div ng-controller="Jmx.DonutChartController" class="ng-scope">
+  <script type="text/ng-template" id="donut">
+    <fs-donut bind="data" outer-radius="200" inner-radius="75"></fs-donut>
+  </script>
+  <div compile="template">
+    <fs-donut bind="data" outer-radius="200" inner-radius="75" class="ng-isolate-scope ng-scope"><svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 630 600"><g transform="translate(315,300) rotate(180) scale(-1, -1)"><path d="M1.1634144591899855e-14,-190A190,190 0 0,1 173.68849370068932,77.02147204504473L68.56124751342999,30.403212649359766A75,75 0 0,0 4.592425496802574e-15,-75Z" stroke="#fff" stroke-width="1.5" cursor="pointer" style="fill: rgb(49, 130, 189);"></path><path d="M173.68849370068932,77.02147204504473A190,190 0 1,1 -3.490243377569956e-14,-190L-1.3777276490407723e-14,-75A75,75 0 1,0 68.56124751342999,30.403212649359766Z" stroke="#fff" stroke-width="1.5" cursor="pointer" style="fill: rgb(107, 174, 214);"></path></g><g class="label_group" transform="translate(315,300)"><line x1="0" x2="0" y1="-203" y2="-208" stroke="grey" stroke-width="2" transform="rotate(56.95735106542057)skewX(-3.180554619231807e-15)scale(1.0000000195663075,1.0000000195663075)"></line><line x1="0" x2="0" y1="-203" y2="-208" stroke="grey" stroke-width="2" transform="rotate(-123.04264893457945)skewX(-3.180554619231807e-15)scale(1.0000000195663075,1.0000000195663075)"></line><text class="value" font-size="20" font-weight="bold" transform="translate(179.3886939300631,-116.68631663595407)" dy="-17" text-anchor="beginning">31.6%</text><text class="value" font-size="20" font-weight="bold" transform="translate(-179.3886939300631,116.68631663595407)" dy="17" text-anchor="end">68.4%</text><text class="units" font-size="16" stroke="none" fill="#000" transform="translate(179.3886939300631,-116.68631663595407)" dy="2" text-anchor="beginning">Used (453073744)</text><text class="units" font-size="16" stroke="none" fill="#000" transform="translate(-179.3886939300631,116.68631663595407)" dy="36" text-anchor="end">Free (978756784)</text></g></svg></fs-donut>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+<div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1000;"></div></li><li class="grid-block gs_w ui-resizable" style="display: list-item; position: absolute;" data-col="8" data-row="1" data-sizex="2" data-sizey="2">
+  <div class="widget-area ng-scope" data-widgetid="w4">
+    <div class="widget-title">
+      <div class="row-fluid">
+        <div class="pull-left">
+          <editable-property ng-model="widget" property="title" on-save="onWidgetRenamed(widget)" class="ng-scope ng-pristine ng-valid"><div ng-mouseenter="showEdit()" ng-mouseleave="hideEdit()" class="ep ng-binding" ng-dblclick="doEdit()">
+  Java Non Heap Memory&nbsp;<i class="ep-edit icon-pencil" title="Edit this item" ng-click="doEdit(); $event.stopPropagation();" no-click="" style="display: none;"></i>
+</div>
+<div class="ep editing" ng-show="editing" no-click="" style="display: none;">
+  <form class="form-inline no-bottom-margin ng-pristine ng-valid" ng-submit="saveEdit()">
+    <fieldset>
+      <span ng-switch="inputType">
+        <!-- ngSwitchWhen: number -->
+        <!-- ngSwitchWhen: password -->
+        <!-- ngSwitchDefault:  --><span ng-switch-default="" class="ng-scope">
+          <input size="20" ng-style="getInputStyle()" value="Java Non Heap Memory" style="width: 16.6667em;" type="text">
+        </span>
+      </span>
+      <i class="green clickable icon-ok icon1point5x" title="Save changes" ng-click="saveEdit()"></i>
+      <i class="red clickable icon-remove icon1point5x" title="Discard changes" ng-click="stopEdit()"></i>
+    </fieldset>
+  </form>
+</div>
+</editable-property>
+        </div>
+        <div class="pull-right">
+          <i class="icon-remove" title="Removes this view from the dashboard" ng-click="removeWidget(widget)"></i>
+        </div>
+      </div>
+    </div>
+    <div class="widget-body">
+      <div ng-include="widget.include"><div ng-controller="Jmx.DonutChartController" class="ng-scope">
+  <script type="text/ng-template" id="donut">
+    <fs-donut bind="data" outer-radius="200" inner-radius="75"></fs-donut>
+  </script>
+  <div compile="template">
+    <fs-donut bind="data" outer-radius="200" inner-radius="75" class="ng-isolate-scope ng-scope"><svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 630 600"><g transform="translate(315,300) rotate(180) scale(-1, -1)"></g><g class="label_group" transform="translate(315,300)"></g></svg></fs-donut>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+<div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1000;"></div></li><li class="grid-block gs_w ui-resizable" style="display: list-item; position: absolute;" data-col="4" data-row="3" data-sizex="6" data-sizey="2">
+  <div class="widget-area ng-scope" data-widgetid="w5">
+    <div class="widget-title">
+      <div class="row-fluid">
+        <div class="pull-left">
+          <editable-property ng-model="widget" property="title" on-save="onWidgetRenamed(widget)" class="ng-scope ng-pristine ng-valid"><div ng-mouseenter="showEdit()" ng-mouseleave="hideEdit()" class="ep ng-binding" ng-dblclick="doEdit()">
+  &nbsp;<i class="ep-edit icon-pencil" title="Edit this item" ng-click="doEdit(); $event.stopPropagation();" no-click="" style="display: none;"></i>
+</div>
+<div class="ep editing" ng-show="editing" no-click="" style="display: none;">
+  <form class="form-inline no-bottom-margin ng-pristine ng-valid" ng-submit="saveEdit()">
+    <fieldset>
+      <span ng-switch="inputType">
+        <!-- ngSwitchWhen: number -->
+        <!-- ngSwitchWhen: password -->
+        <!-- ngSwitchDefault:  --><span ng-switch-default="" class="ng-scope">
+          <input size="0" ng-style="getInputStyle()" value="" type="text">
+        </span>
+      </span>
+      <i class="green clickable icon-ok icon1point5x" title="Save changes" ng-click="saveEdit()"></i>
+      <i class="red clickable icon-remove icon1point5x" title="Discard changes" ng-click="stopEdit()"></i>
+    </fieldset>
+  </form>
+</div>
+</editable-property>
+        </div>
+        <div class="pull-right">
+          <i class="icon-remove" title="Removes this view from the dashboard" ng-click="removeWidget(widget)"></i>
+        </div>
+      </div>
+    </div>
+    <div class="widget-body">
+      <div ng-include="widget.include"><div ng-controller="Jmx.ChartController" ng-switch="errorMessage()" class="ng-scope">
+  <!-- ngSwitchWhen: metrics -->
+  <!-- ngSwitchWhen: updateRate -->
+  <div id="charts"><div class="top axis"><svg width="960" height="28"><g transform="translate(0,27)"><g style="opacity: 1;" transform="translate(50,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:06</text></g><g style="opacity: 1;" transform="translate(110.00000000000001,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:07</text></g><g style="opacity: 1;" transform="translate(170,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:08</text></g><g style="opacity: 1;" transform="translate(230,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:09</text></g><g style="opacity: 1;" transform="translate(290.00000000000006,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:10</text></g><g style="opacity: 1;" transform="translate(350.00000000000006,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:11</text></g><g style="opacity: 1;" transform="translate(410.00000000000006,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:12</text></g><g style="opacity: 1;" transform="translate(470.00000000000006,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:13</text></g><g style="opacity: 1;" transform="translate(530,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:14</text></g><g style="opacity: 1;" transform="translate(590,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:15</text></g><g style="opacity: 1;" transform="translate(650,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:16</text></g><g style="opacity: 1;" transform="translate(710,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:17</text></g><g style="opacity: 1;" transform="translate(770,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:18</text></g><g style="opacity: 1;" transform="translate(830,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:19</text></g><g style="opacity: 1;" transform="translate(890,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:20</text></g><g style="opacity: 1;" transform="translate(950,0)"><line class="tick" y2="-6" x2="0"></line><text y="-9" x="0" dy="0em" style="text-anchor: middle;">03:21</text></g><path class="domain" d="M0,-6V0H960V-6"></path><text y="-9" x="0" dy="0em" style="text-anchor: middle; display: none;"></text></g></svg></div><div class="bottom axis"><svg width="960" height="28"><g transform="translate(0,4)"><g style="opacity: 1;" transform="translate(50,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:06</text></g><g style="opacity: 1;" transform="translate(110.00000000000001,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:07</text></g><g style="opacity: 1;" transform="translate(170,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:08</text></g><g style="opacity: 1;" transform="translate(230,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:09</text></g><g style="opacity: 1;" transform="translate(290.00000000000006,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:10</text></g><g style="opacity: 1;" transform="translate(350.00000000000006,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:11</text></g><g style="opacity: 1;" transform="translate(410.00000000000006,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:12</text></g><g style="opacity: 1;" transform="translate(470.00000000000006,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:13</text></g><g style="opacity: 1;" transform="translate(530,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:14</text></g><g style="opacity: 1;" transform="translate(590,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:15</text></g><g style="opacity: 1;" transform="translate(650,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:16</text></g><g style="opacity: 1;" transform="translate(710,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:17</text></g><g style="opacity: 1;" transform="translate(770,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:18</text></g><g style="opacity: 1;" transform="translate(830,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:19</text></g><g style="opacity: 1;" transform="translate(890,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:20</text></g><g style="opacity: 1;" transform="translate(950,0)"><line class="tick" y2="6" x2="0"></line><text y="9" x="0" dy=".71em" style="text-anchor: middle;">03:21</text></g><path class="domain" d="M0,6V0H960V6"></path><text y="9" x="0" dy=".71em" style="text-anchor: middle; display: none;"></text></g></svg></div><div class="rule"><div class="line" style="position: absolute; top: 0px; bottom: 0px; width: 1px; pointer-events: none; display: none;"></div></div><div class="horizon"><canvas width="960" height="30"></canvas><span class="title">Current thread cpu time</span><span class="value" style="">29M</span></div><div class="horizon"><canvas width="960" height="30"></canvas><span class="title">Current thread user time</span><span class="value" style="">20M</span></div><div class="horizon"><canvas width="960" height="30"></canvas><span class="title">Daemon thread count</span><span class="value" style="">66</span></div><div class="horizon"><canvas width="960" height="30"></canvas><span class="title">Peak thread count</span><span class="value" style="">92</span></div><div class="horizon"><canvas width="960" height="30"></canvas><span class="title">Thread count</span><span class="value" style="">91</span></div><div class="horizon"><canvas width="960" height="30"></canvas><span class="title">Total started thread count</span><span class="value" style="">120</span></div></div>
+</div>
+
+</div>
+    </div>
+  </div>
+<div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1000;"></div></li><li class="grid-block gs_w ui-resizable" style="display: list-item; position: absolute;" data-col="4" data-row="1" data-sizex="2" data-sizey="2">
+  <div class="widget-area ng-scope" data-widgetid="w6">
+    <div class="widget-title">
+      <div class="row-fluid">
+        <div class="pull-left">
+          <editable-property ng-model="widget" property="title" on-save="onWidgetRenamed(widget)" class="ng-scope ng-pristine ng-valid"><div ng-mouseenter="showEdit()" ng-mouseleave="hideEdit()" class="ep ng-binding" ng-dblclick="doEdit()">
+  System CPU Load&nbsp;<i class="ep-edit icon-pencil" title="Edit this item" ng-click="doEdit(); $event.stopPropagation();" no-click="" style="display: none;"></i>
+</div>
+<div class="ep editing" ng-show="editing" no-click="" style="display: none;">
+  <form class="form-inline no-bottom-margin ng-pristine ng-valid" ng-submit="saveEdit()">
+    <fieldset>
+      <span ng-switch="inputType">
+        <!-- ngSwitchWhen: number -->
+        <!-- ngSwitchWhen: password -->
+        <!-- ngSwitchDefault:  --><span ng-switch-default="" class="ng-scope">
+          <input size="15" ng-style="getInputStyle()" value="System CPU Load" style="width: 12.5em;" type="text">
+        </span>
+      </span>
+      <i class="green clickable icon-ok icon1point5x" title="Save changes" ng-click="saveEdit()"></i>
+      <i class="red clickable icon-remove icon1point5x" title="Discard changes" ng-click="stopEdit()"></i>
+    </fieldset>
+  </form>
+</div>
+</editable-property>
+        </div>
+        <div class="pull-right">
+          <i class="icon-remove" title="Removes this view from the dashboard" ng-click="removeWidget(widget)"></i>
+        </div>
+      </div>
+    </div>
+    <div class="widget-body">
+      <div ng-include="widget.include"><div ng-controller="Jmx.AreaChartController" class="ng-scope">
+  <script type="text/ng-template" id="areaChart">
+    <fs-area bind="data" duration="250" interpolate="false" point-radius="5" width="width" height="height" label=""></fs-area>
+  </script>
+  <div compile="template">
+    <fs-area bind="data" duration="250" interpolate="false" point-radius="5" width="width" height="height" label="" class="ng-isolate-scope ng-scope"><svg preserveAspectRatio="xMinYMin" viewBox="0 0 308 296"><g transform="translate(80,20)"><path class="area fill " d="M0,192.24004361446018L208,0L208,246L0,246Z"></path><g class="area x axis " transform="translate(0,246)"><g style="opacity: 1;" transform="translate(0,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.467</text></g><g style="opacity: 1;" transform="translate(0,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.467</text></g><g style="opacity: 1;" transform="translate(0,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.467</text></g><g style="opacity: 1;" transform="translate(0,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.467</text></g><g style="opacity: 1;" transform="translate(0,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.467</text></g><g style="opacity: 1;" transform="translate(0,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.467</text></g><g style="opacity: 1;" transform="translate(0,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.467</text></g><g style="opacity: 1;" transform="translate(0,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.467</text></g><g style="opacity: 1;" transform="translate(0,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.467</text></g><g style="opacity: 1;" transform="translate(0,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.467</text></g><g style="opacity: 1;" transform="translate(208,0)"><line class="tick" y2="6" x2="0"></line><text y="9" dy=".71em" style="text-anchor: middle;" x="0">.468</text></g><path class="domain" d="M0,6V0H208V6"></path></g><g class="area y axis "><g style="opacity: 1;" transform="translate(0,246)"><line class="tick" x2="-6" y2="0"></line><text x="-9" y="0" dy=".32em" style="text-anchor: end;">0.0</text></g><g style="opacity: 1;" transform="translate(0,219.67276000976562)"><line class="tick" x2="-6" y2="0"></line><text x="-9" y="0" dy=".32em" style="text-anchor: end;">0.1</text></g><g style="opacity: 1;" transform="translate(0,193.3455352783203)"><line class="tick" x2="-6" y2="0"></line><text x="-9" y="0" dy=".32em" style="text-anchor: end;">0.2</text></g><g style="opacity: 1;" transform="translate(0,167.01829528808594)"><line class="tick" x2="-6" y2="0"></line><text x="-9" dy=".32em" style="text-anchor: end;" y="0">0.3</text></g><g style="opacity: 1;" transform="translate(0,140.69107055664062)"><line class="tick" x2="-6" y2="0"></line><text x="-9" dy=".32em" style="text-anchor: end;" y="0">0.4</text></g><g style="opacity: 1;" transform="translate(0,114.36383056640625)"><line class="tick" x2="-6" y2="0"></line><text x="-9" dy=".32em" style="text-anchor: end;" y="0">0.5</text></g><g style="opacity: 1;" transform="translate(0,88.0365982055664)"><line class="tick" x2="-6" y2="0"></line><text x="-9" dy=".32em" style="text-anchor: end;" y="0">0.6</text></g><g style="opacity: 1;" transform="translate(0,61.7093620300293)"><line class="tick" x2="-6" y2="0"></line><text x="-9" dy=".32em" style="text-anchor: end;" y="0">0.7</text></g><g style="opacity: 1;" transform="translate(0,35.38212585449219)"><line class="tick" x2="-6" y2="0"></line><text x="-9" dy=".32em" style="text-anchor: end;" y="0">0.8</text></g><g style="opacity: 1;" transform="translate(0,9.054893493652344)"><line class="tick" x2="-6" y2="0"></line><text x="-9" dy=".32em" style="text-anchor: end;" y="0">0.9</text></g><path class="domain" d="M-6,0H0V246H-6"></path><text transform="rotate(-90)" y="6" dy=".71em" style="text-anchor: end;">Frequency</text></g><path class="area line " d="M0,192.24004361446018L208,0"></path><circle class="area line points " cursor="pointer" cx="0" cy="192.24004361446018" style="opacity: 1;" r="5"></circle><circle class="area line points " cursor="pointer" cx="208" cy="0" style="opacity: 1;" r="5"></circle></g></svg></fs-area>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+<div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1000;"></div></li></ul>
+  </div>
+</div>
+
+
+</div>
+</div>
+
+</div>
+      </div>
+
+      <div class="">
+        
+      </div>
+
+      <div class="">
+        
+      </div>
+    </div>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/html5shiv.js?d6a214a5a003e446"></script>
+    <![endif]-->
+
+    <script src="app/app.js?752cdcecc1eaedae"></script>
+
+    <!-- Distro customisations -->
+    <script type="text/javascript" src="vendor.js?fd4637ea0573f911"></script>
+  
+
+
+</body></html>
