@@ -32,3 +32,6 @@ fuse-tests/karaf-related-tests/patch-tests/*.zip
 
 #properties files
 jbossqe-fuse.properties
+
+# build-reports
+build/
