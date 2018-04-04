@@ -17,7 +17,7 @@
 		<java.lang.version.target>1.8</java.lang.version.target>
 		<fuse.group>org.jboss.fuse</fuse.group>
 		<fuse.id>jboss-fuse-karaf</fuse.id>
-		<fuse.version>6.3.0.redhat-187</fuse.version>
+		<fuse.version>7.0.0.fuse-000163</fuse.version>
 	</properties>
 
 	<dependencies>
@@ -56,7 +56,6 @@
 			<version>3.9.0</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<repositories>
@@ -76,6 +75,17 @@
 			</activation>
 			<modules>
 				<module>fuse-browser</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>hawtio</id>
+			<activation>
+				<property>
+					<name>fuse.hawtio</name>
+				</property>
+			</activation>
+			<modules>
+				<module>fuse-hawtio</module>
 			</modules>
 		</profile>
 	</profiles>

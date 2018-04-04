@@ -1,0 +1,167 @@
+<html class="login-pf ng-scope"><head><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  <meta charset="UTF-8">
+  <title>hawtio console login</title>
+  <base href="/hawtio/">
+
+  <!-- CSS -->
+  <!-- datatables -->
+  <link rel="stylesheet" href="libs/datatables.net-dt/css/jquery.dataTables.css">
+  <!-- patternfly -->
+  <link rel="stylesheet" href="libs/patternfly/dist/css/patternfly.min.css">
+  <link rel="stylesheet" href="libs/patternfly/dist/css/patternfly-additions.min.css">
+  <!-- angular-patternfly -->
+  <link rel="stylesheet" href="libs/angular-patternfly/dist/styles/angular-patternfly.min.css">
+  <!-- codemirror -->
+  <link rel="stylesheet" href="libs/codemirror/lib/codemirror.css">
+  <!-- angular-resizable -->
+  <link rel="stylesheet" href="libs/angular-resizable/src/angular-resizable.css">
+  <!-- @hawtio/core -->
+  <link rel="stylesheet" href="libs/@hawtio/core/dist/hawtio-core.css">
+  <!-- @hawtio/ui -->
+  <link rel="stylesheet" href="libs/@hawtio/ui/dist/hawtio-ui.css">
+  <!-- @hawtio/forms -->
+  <link rel="stylesheet" href="libs/@hawtio/forms/dist/hawtio-forms.css">
+  <!-- @hawtio/jmx -->
+  <link rel="stylesheet" href="libs/@hawtio/jmx/dist/hawtio-jmx.css">
+  <!-- @hawtio/integration -->
+  <link rel="stylesheet" href="libs/@hawtio/integration/dist/hawtio-integration.css">
+  <!-- @hawtio/log -->
+  <link rel="stylesheet" href="libs/@hawtio/log/dist/hawtio-log.css">
+  <!-- @hawtio/console-assembly -->
+  <link rel="stylesheet" href="css/hawtio-console-assembly.css">
+
+  <!-- JavaScript -->
+  <!-- jquery -->
+  <script src="libs/jquery/dist/jquery.min.js"></script>
+  <!-- datatables -->
+  <script src="libs/datatables.net/js/jquery.dataTables.js"></script>
+  <script src="libs/datatables.net-select/js/dataTables.select.js"></script>
+  <!-- bootstrap -->
+  <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- patternfly -->
+  <script src="libs/patternfly/dist/js/patternfly.min.js"></script>
+  <!-- patternfly-bootstrap-treeview -->
+  <script src="libs/patternfly-bootstrap-treeview/dist/bootstrap-treeview.js"></script>
+  <!-- angular -->
+  <script src="libs/angular/angular.js"></script>
+  <!-- angular-sanitize -->
+  <script src="libs/angular-sanitize/angular-sanitize.js"></script>
+  <!-- angular-route -->
+  <script src="libs/angular-route/angular-route.min.js"></script>
+  <!-- angular-ui-bootstrap -->
+  <script src="libs/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+  <!-- angular-resizable -->
+  <script src="libs/angular-resizable/angular-resizable.min.js"></script>
+  <!-- angular-animate -->
+  <script src="libs/angular-animate/angular-animate.min.js"></script>
+  <!-- angular-drag-and-drop-lists -->
+  <script src="libs/angular-drag-and-drop-lists/angular-drag-and-drop-lists.min.js"></script>
+  <!-- angular-datatables -->
+  <script src="libs/angularjs-datatables/dist/angular-datatables.min.js"></script>
+  <script src="libs/angularjs-datatables/dist/plugins/select/angular-datatables.select.min.js"></script>
+  <!-- angular-patternfly -->
+  <script src="libs/angular-patternfly/dist/angular-patternfly.js"></script>
+  <!-- angular-idle -->
+  <script src="libs/ng-idle/angular-idle.js"></script>
+  <!-- c3, d3 -->
+  <script src="libs/c3/c3.min.js"></script>
+  <script src="libs/d3/d3.min.js"></script>
+  <!-- lodash -->
+  <script src="libs/lodash/lodash.min.js"></script>
+  <!-- urijs -->
+  <script src="libs/urijs/src/URI.min.js"></script>
+  <!-- js-logger -->
+  <script src="libs/js-logger/src/logger.min.js"></script>
+  <!-- clipboard -->
+  <script src="libs/clipboard/dist/clipboard.js"></script>
+  <!-- marked -->
+  <script src="libs/marked/lib/marked.js"></script>
+  <!-- js-beautify -->
+  <script src="libs/js-beautify/js/lib/beautify.js"></script>
+  <script src="libs/js-beautify/js/lib/beautify-html.js"></script>
+  <!-- codemirror -->
+  <script src="libs/codemirror/lib/codemirror.js"></script>
+  <script src="libs/codemirror/addon/edit/closetag.js"></script>
+  <script src="libs/codemirror/addon/edit/continuelist.js"></script>
+  <script src="libs/codemirror/addon/edit/matchbrackets.js"></script>
+  <script src="libs/codemirror/addon/fold/foldcode.js"></script>
+  <script src="libs/codemirror/addon/fold/brace-fold.js"></script>
+  <script src="libs/codemirror/addon/fold/xml-fold.js"></script>
+  <script src="libs/codemirror/mode/javascript/javascript.js"></script>
+  <script src="libs/codemirror/mode/xml/xml.js"></script>
+  <script src="libs/codemirror/mode/css/css.js"></script>
+  <script src="libs/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+  <script src="libs/codemirror/mode/markdown/markdown.js"></script>
+  <script src="libs/codemirror/mode/diff/diff.js"></script>
+  <script src="libs/codemirror/mode/properties/properties.js"></script>
+  <script src="libs/codemirror/mode/clike/clike.js"></script>
+  <script src="libs/codemirror/mode/yaml/yaml.js"></script>
+  <!-- graphlib, dagre -->
+  <script src="libs/graphlib/dist/graphlib.core.min.js"></script>
+  <script src="libs/dagre-layout/dist/dagre-layout.js"></script>
+  <!-- ng-infinite-scroll -->
+  <script src="libs/ng-infinite-scroll/build/ng-infinite-scroll.min.js"></script>
+  <!-- @hawtio/core -->
+  <script src="libs/@hawtio/core/dist/hawtio-core.js"></script>
+  <!-- @hawtio/ui -->
+  <script src="libs/@hawtio/ui/dist/hawtio-ui.js"></script>
+  <!-- @hawtio/forms -->
+  <script src="libs/@hawtio/forms/dist/hawtio-forms.js"></script>
+  <!-- @hawtio/oauth -->
+  <script src="libs/@hawtio/oauth/dist/hawtio-oauth.js"></script>
+  <!-- @hawtio/jmx -->
+  <script src="libs/@hawtio/jmx/dist/hawtio-jmx.js"></script>
+  <!-- @hawtio/integration -->
+  <script src="libs/@hawtio/integration/dist/hawtio-integration.js"></script>
+  <!-- @hawtio/log -->
+  <script src="libs/@hawtio/log/dist/hawtio-log.js"></script>
+  <!-- @hawtio/console-assembly -->
+  <script src="js/hawtio-console-assembly.js"></script>
+</head>
+
+<body>
+  <hawtio-login class="ng-isolate-scope"><span id="badge">
+  <img alt="" ng-src="img/hawtio-logo.svg" src="img/hawtio-logo.svg">
+</span>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div id="brand">
+        <img alt="Hawtio Management Console" ng-src="img/hawtio-logo.svg" src="img/hawtio-logo.svg">
+        <span class="ng-binding"></span>
+      </div><!--/#brand-->
+      <!-- ngIf: $ctrl.wrongPassword --><div class="alert alert-danger ng-scope" ng-if="$ctrl.wrongPassword">
+        <span class="pficon pficon-error-circle-o"></span>
+        Incorrect username or password
+      </div><!-- end ngIf: $ctrl.wrongPassword -->
+    </div><!--/.col-*-->
+    <div class="col-sm-7 col-md-6 col-lg-5 login">
+      <form class="form-horizontal ng-valid ng-dirty ng-valid-parse ng-submitted" role="form" ng-submit="$ctrl.doLogin()">
+        <div class="form-group">
+          <label for="username" class="col-sm-2 col-md-2 control-label">Username</label>
+          <div class="col-sm-10 col-md-10">
+            <input class="form-control ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse" id="username" autocomplete="section-login username" ng-model="$ctrl.entity.username" tabindex="1" autofocus="" style="" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-sm-2 col-md-2 control-label">Password</label>
+          <div class="col-sm-10 col-md-10">
+            <input class="form-control ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse" id="password" autocomplete="section-login current-password" ng-model="$ctrl.entity.password" tabindex="2" style="" type="password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12 col-sm-12 col-md-12 submit">
+            <button type="submit" class="btn btn-primary btn-lg" tabindex="4" style="">Log In</button>
+          </div>
+        </div>
+      </form>
+    </div><!--/.col-*-->
+    <div class="col-sm-5 col-md-6 col-lg-7 details">
+    </div><!--/.col-*-->
+  </div><!--/.row-->
+</div><!--/.container-->
+</hawtio-login>
+
+
+
+</body></html>

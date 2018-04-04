@@ -1,0 +1,346 @@
+<html class="layout-pf layout-pf-fixed ng-scope"><head><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="UTF-8">
+    <title>hawtio console</title>
+    <base href="/hawtio/">
+
+    <!-- CSS -->
+    <!-- datatables -->
+    <link rel="stylesheet" href="libs/datatables.net-dt/css/jquery.dataTables.css">
+    <!-- patternfly -->
+    <link rel="stylesheet" href="libs/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet" href="libs/patternfly/dist/css/patternfly-additions.min.css">
+    <!-- angular-patternfly -->
+    <link rel="stylesheet" href="libs/angular-patternfly/dist/styles/angular-patternfly.min.css">
+    <!-- codemirror -->
+    <link rel="stylesheet" href="libs/codemirror/lib/codemirror.css">
+    <!-- angular-resizable -->
+    <link rel="stylesheet" href="libs/angular-resizable/src/angular-resizable.css">
+    <!-- @hawtio/core -->
+    <link rel="stylesheet" href="libs/@hawtio/core/dist/hawtio-core.css">
+    <!-- @hawtio/ui -->
+    <link rel="stylesheet" href="libs/@hawtio/ui/dist/hawtio-ui.css">
+    <!-- @hawtio/forms -->
+    <link rel="stylesheet" href="libs/@hawtio/forms/dist/hawtio-forms.css">
+    <!-- @hawtio/jmx -->
+    <link rel="stylesheet" href="libs/@hawtio/jmx/dist/hawtio-jmx.css">
+    <!-- @hawtio/integration -->
+    <link rel="stylesheet" href="libs/@hawtio/integration/dist/hawtio-integration.css">
+    <!-- @hawtio/log -->
+    <link rel="stylesheet" href="libs/@hawtio/log/dist/hawtio-log.css">
+    <!-- @hawtio/console-assembly -->
+    <link rel="stylesheet" href="css/hawtio-console-assembly.css">
+
+    <!-- JAVASCRIPT -->
+    <!-- jquery -->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <!-- datatables -->
+    <script src="libs/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="libs/datatables.net-select/js/dataTables.select.js"></script>
+    <!-- bootstrap -->
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- patternfly -->
+    <script src="libs/patternfly/dist/js/patternfly.min.js"></script>
+    <!-- patternfly-bootstrap-treeview -->
+    <script src="libs/patternfly-bootstrap-treeview/dist/bootstrap-treeview.js"></script>
+    <!-- angular -->
+    <script src="libs/angular/angular.js"></script>
+    <!-- angular-sanitize -->
+    <script src="libs/angular-sanitize/angular-sanitize.js"></script>
+    <!-- angular-route -->
+    <script src="libs/angular-route/angular-route.min.js"></script>
+    <!-- angular-ui-bootstrap -->
+    <script src="libs/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <!-- angular-resizable -->
+    <script src="libs/angular-resizable/angular-resizable.min.js"></script>
+    <!-- angular-animate -->
+    <script src="libs/angular-animate/angular-animate.min.js"></script>
+    <!-- angular-drag-and-drop-lists -->
+    <script src="libs/angular-drag-and-drop-lists/angular-drag-and-drop-lists.min.js"></script>
+    <!-- angular-datatables -->
+    <script src="libs/angularjs-datatables/dist/angular-datatables.min.js"></script>
+    <script src="libs/angularjs-datatables/dist/plugins/select/angular-datatables.select.min.js"></script>
+    <!-- angular-patternfly -->
+    <script src="libs/angular-patternfly/dist/angular-patternfly.js"></script>
+    <!-- angular-idle -->
+    <script src="libs/ng-idle/angular-idle.js"></script>
+    <!-- c3, d3 -->
+    <script src="libs/c3/c3.min.js"></script>
+    <script src="libs/d3/d3.min.js"></script>
+    <!-- lodash -->
+    <script src="libs/lodash/lodash.min.js"></script>
+    <!-- urijs -->
+    <script src="libs/urijs/src/URI.min.js"></script>
+    <!-- js-logger -->
+    <script src="libs/js-logger/src/logger.min.js"></script>
+    <!-- clipboard -->
+    <script src="libs/clipboard/dist/clipboard.js"></script>
+    <!-- marked -->
+    <script src="libs/marked/lib/marked.js"></script>
+    <!-- js-beautify -->
+    <script src="libs/js-beautify/js/lib/beautify.js"></script>
+    <script src="libs/js-beautify/js/lib/beautify-html.js"></script>
+    <!-- codemirror -->
+    <script src="libs/codemirror/lib/codemirror.js"></script>
+    <script src="libs/codemirror/addon/edit/closetag.js"></script>
+    <script src="libs/codemirror/addon/edit/continuelist.js"></script>
+    <script src="libs/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="libs/codemirror/addon/fold/foldcode.js"></script>
+    <script src="libs/codemirror/addon/fold/brace-fold.js"></script>
+    <script src="libs/codemirror/addon/fold/xml-fold.js"></script>
+    <script src="libs/codemirror/mode/javascript/javascript.js"></script>
+    <script src="libs/codemirror/mode/xml/xml.js"></script>
+    <script src="libs/codemirror/mode/css/css.js"></script>
+    <script src="libs/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="libs/codemirror/mode/markdown/markdown.js"></script>
+    <script src="libs/codemirror/mode/diff/diff.js"></script>
+    <script src="libs/codemirror/mode/properties/properties.js"></script>
+    <script src="libs/codemirror/mode/clike/clike.js"></script>
+    <script src="libs/codemirror/mode/yaml/yaml.js"></script>
+    <!-- graphlib, dagre -->
+    <script src="libs/graphlib/dist/graphlib.core.min.js"></script>
+    <script src="libs/dagre-layout/dist/dagre-layout.js"></script>
+    <!-- ng-infinite-scroll -->
+    <script src="libs/ng-infinite-scroll/build/ng-infinite-scroll.min.js"></script>
+    <!-- @hawtio/core -->
+    <script src="libs/@hawtio/core/dist/hawtio-core.js"></script>
+    <!-- @hawtio/ui -->
+    <script src="libs/@hawtio/ui/dist/hawtio-ui.js"></script>
+    <!-- @hawtio/forms -->
+    <script src="libs/@hawtio/forms/dist/hawtio-forms.js"></script>
+    <!-- @hawtio/oauth -->
+    <script src="libs/@hawtio/oauth/dist/hawtio-oauth.js"></script>
+    <!-- @hawtio/jmx -->
+    <script src="libs/@hawtio/jmx/dist/hawtio-jmx.js"></script>
+    <!-- @hawtio/integration -->
+    <script src="libs/@hawtio/integration/dist/hawtio-integration.js"></script>
+    <!-- @hawtio/log -->
+    <script src="libs/@hawtio/log/dist/hawtio-log.js"></script>
+    <!-- @hawtio/console-assembly -->
+    <script src="js/hawtio-console-assembly.js"></script>
+  <style type="text/css" id="jmxtree-style"> .treeview .list-group-item{cursor:pointer}.treeview span.indent{margin-left:10px;margin-right:10px}.treeview span.icon{width:12px;margin-right:5px}.treeview .node-disabled{color:silver;cursor:not-allowed}.node-jmxtree{}.node-jmxtree:not(.node-disabled):hover{background-color:#F5F5F5;}.node-jmxtree.node-result{color:#b58100;background-color:#fbeabc;}.node-jmxtree.node-result:hover{color:#b58100;background-color:#fbeabc;}.node-jmxtree.node-selected{color:#FFFFFF;background-color:#428bca;}.node-jmxtree.node-selected:hover{color:#FFFFFF;background-color:#428bca;} </style></head>
+  <body>
+    <hawtio-app class="ng-isolate-scope">
+      <nav-bar on-toggle-vertical-nav="$ctrl.toggleVerticalNav(collapsed)" class="ng-isolate-scope">
+      <nav class="navbar navbar-pf-vertical">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" ng-click="$ctrl.toggleVerticalNav()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>        
+          <a href="." class="navbar-brand">
+            <hawtio-branding-image class="navbar-brand-name ng-isolate-scope" src="appLogoUrl" alt="appName"><img class="navbar-brand-name" src="img/hawtio-logo.svg" alt="Hawtio Management Console"></hawtio-branding-image>
+          </a>
+        </div>
+        <nav class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right navbar-iconic">
+            <li class="dropdown">
+              <a class="dropdown-toggle nav-item-iconic" id="helpDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span title="Help" class="fa pficon-help"></span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="helpDropdownMenu">
+                <li hawtio-extension="" name="hawtio-help"><a ng-href="help" class="ng-scope" href="help">Help</a></li>
+                <li hawtio-extension="" name="hawtio-about"><a ng-init="flags = {open: false}" ng-click="flags.open = true" class="ng-scope">About</a>
+        <about flags="flags" class="ng-scope ng-isolate-scope">
+      <pf-about-modal is-open="$ctrl.flags.open" on-close="$ctrl.onClose()" title="$ctrl.title" product-info="$ctrl.productInfo" additional-info="$ctrl.additionalInfo" class="ng-isolate-scope"><script type="text/ng-template" id="about-modal-template.html"><div class="about-modal-pf">
+    <div class="modal-header">
+      <button type="button" class="close" ng-click="$ctrl.close()" aria-hidden="true">
+        <span class="pficon pficon-close"></span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h1 ng-if="$ctrl.title">{{$ctrl.title}}</h1>
+      <div ng-if="$ctrl.productInfo && $ctrl.productInfo.length > 0" class="product-versions-pf">
+        <ul class="list-unstyled">
+          <li ng-repeat="info in $ctrl.productInfo"><strong>{{info.name}}</strong> {{info.value}}</li>
+        </ul>
+      </div>
+      <div pf-about-modal-transclude="$ctrl.template" class="product-versions-pf"></div>
+      <div ng-if="$ctrl.additionalInfo" class="product-versions-pf">{{$ctrl.additionalInfo}}</div>
+      <div ng-if="$ctrl.copyright" class="trademark-pf">{{$ctrl.copyright}}</div>
+    </div>
+    <div class="modal-footer">
+      <img ng-if="$ctrl.imgSrc" ng-src="{{$ctrl.imgSrc}}" alt="{{$ctrl.imgAlt}}"/>
+    </div>
+  </div></script></pf-about-modal>
+    </about></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle nav-item-iconic" id="userDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span title="Username" class="fa pficon-user"></span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="userDropdownMenu">
+                <li hawtio-extension="" name="hawtio-preferences"><a ng-href="preferences" class="ng-scope" href="preferences">Preferences</a></li>
+                <li hawtio-extension="" name="hawtio-logout"><a href="" ng-click="userDetails.logout()" class="ng-scope">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </nav>
+    </nav-bar>
+      <vertical-nav collapsed="$ctrl.verticalNavCollapsed" class="ng-isolate-scope">
+      <div class="nav-pf-vertical nav-pf-vertical-with-sub-menus hidden-icons-pf nav-hawtio-vertical" ng-class="{'hover-secondary-nav-pf': $ctrl.showSecondaryNav, collapsed: $ctrl.collapsed}">
+        <ul class="list-group" hawtio-main-nav=""><!-- ngIf: item.isValid === undefined || item.isValid() --><li class="list-group-item ng-scope" ng-class="{ active: item.isSelected(), 
+                'secondary-nav-item-pf': item.tabs,
+                'is-hover': item.isHover }" ng-if="item.isValid === undefined || item.isValid()" ng-hide="item.hide()" ng-mouseenter="$ctrl.onHover(item)" ng-mouseleave="$ctrl.onUnHover(item)" data-target="#jvm-secondary">
+  <a ng-href="/hawtio/jvm?main-tab=jvm" ng-click="item.click($event)" href="/hawtio/jvm?main-tab=jvm">
+    <span class="list-group-item-value">
+      <ng-bind-html ng-bind-html="item.title()" class="ng-binding">Connect</ng-bind-html>
+    </span>
+  </a>
+  <!-- ngIf: item.tabs -->
+</li><!-- end ngIf: item.isValid === undefined || item.isValid() --><!-- ngIf: item.isValid === undefined || item.isValid() --><li class="list-group-item ng-scope active" ng-class="{ active: item.isSelected(), 
+                'secondary-nav-item-pf': item.tabs,
+                'is-hover': item.isHover }" ng-if="item.isValid === undefined || item.isValid()" ng-hide="item.hide()" ng-mouseenter="$ctrl.onHover(item)" ng-mouseleave="$ctrl.onUnHover(item)" data-target="#jmx-secondary">
+  <a ng-href="/hawtio/jmx?main-tab=jmx" ng-click="item.click($event)" href="/hawtio/jmx?main-tab=jmx">
+    <span class="list-group-item-value">
+      <ng-bind-html ng-bind-html="item.title()" class="ng-binding">JMX</ng-bind-html>
+    </span>
+  </a>
+  <!-- ngIf: item.tabs -->
+</li><!-- end ngIf: item.isValid === undefined || item.isValid() --><!-- ngIf: item.isValid === undefined || item.isValid() --><li class="list-group-item ng-scope" ng-class="{ active: item.isSelected(), 
+                'secondary-nav-item-pf': item.tabs,
+                'is-hover': item.isHover }" ng-if="item.isValid === undefined || item.isValid()" ng-hide="item.hide()" ng-mouseenter="$ctrl.onHover(item)" ng-mouseleave="$ctrl.onUnHover(item)" data-target="#osgi-secondary">
+  <a ng-href="/hawtio/osgi?main-tab=osgi" ng-click="item.click($event)" href="/hawtio/osgi?main-tab=osgi">
+    <span class="list-group-item-value">
+      <ng-bind-html ng-bind-html="item.title()" class="ng-binding">OSGi</ng-bind-html>
+    </span>
+  </a>
+  <!-- ngIf: item.tabs -->
+</li><!-- end ngIf: item.isValid === undefined || item.isValid() --><!-- ngIf: item.isValid === undefined || item.isValid() --><li class="list-group-item ng-scope" ng-class="{ active: item.isSelected(), 
+                'secondary-nav-item-pf': item.tabs,
+                'is-hover': item.isHover }" ng-if="item.isValid === undefined || item.isValid()" ng-hide="item.hide()" ng-mouseenter="$ctrl.onHover(item)" ng-mouseleave="$ctrl.onUnHover(item)" data-target="#logs-secondary">
+  <a ng-href="/hawtio/logs?main-tab=logs" ng-click="item.click($event)" href="/hawtio/logs?main-tab=logs">
+    <span class="list-group-item-value">
+      <ng-bind-html ng-bind-html="item.title()" class="ng-binding">Logs</ng-bind-html>
+    </span>
+  </a>
+  <!-- ngIf: item.tabs -->
+</li><!-- end ngIf: item.isValid === undefined || item.isValid() --><!-- ngIf: item.isValid === undefined || item.isValid() --><li class="list-group-item ng-scope" ng-class="{ active: item.isSelected(), 
+                'secondary-nav-item-pf': item.tabs,
+                'is-hover': item.isHover }" ng-if="item.isValid === undefined || item.isValid()" ng-hide="item.hide()" ng-mouseenter="$ctrl.onHover(item)" ng-mouseleave="$ctrl.onUnHover(item)" data-target="#runtime-secondary">
+  <a ng-href="/hawtio/runtime?main-tab=runtime" ng-click="item.click($event)" href="/hawtio/runtime?main-tab=runtime">
+    <span class="list-group-item-value">
+      <ng-bind-html ng-bind-html="item.title()" class="ng-binding">Runtime</ng-bind-html>
+    </span>
+  </a>
+  <!-- ngIf: item.tabs -->
+</li><!-- end ngIf: item.isValid === undefined || item.isValid() --><!-- ngIf: item.isValid === undefined || item.isValid() --><li class="list-group-item ng-scope" ng-class="{ active: item.isSelected(), 
+                'secondary-nav-item-pf': item.tabs,
+                'is-hover': item.isHover }" ng-if="item.isValid === undefined || item.isValid()" ng-hide="item.hide()" ng-mouseenter="$ctrl.onHover(item)" ng-mouseleave="$ctrl.onUnHover(item)" data-target="#diagnostics-secondary">
+  <a ng-href="/hawtio/diagnostics/heap?main-tab=diagnostics" ng-click="item.click($event)" href="/hawtio/diagnostics/heap?main-tab=diagnostics">
+    <span class="list-group-item-value">
+      <ng-bind-html ng-bind-html="item.title()" class="ng-binding">Diagnostics</ng-bind-html>
+    </span>
+  </a>
+  <!-- ngIf: item.tabs -->
+</li><!-- end ngIf: item.isValid === undefined || item.isValid() --><!-- ngIf: item.isValid === undefined || item.isValid() --><li class="list-group-item ng-scope" ng-class="{ active: item.isSelected(), 
+                'secondary-nav-item-pf': item.tabs,
+                'is-hover': item.isHover }" ng-if="item.isValid === undefined || item.isValid()" ng-hide="item.hide()" ng-mouseenter="$ctrl.onHover(item)" ng-mouseleave="$ctrl.onUnHover(item)" data-target="#spring-boot-secondary">
+  <a ng-href="/hawtio/spring-boot?main-tab=spring-boot" ng-click="item.click($event)" href="/hawtio/spring-boot?main-tab=spring-boot">
+    <span class="list-group-item-value">
+      <ng-bind-html ng-bind-html="item.title()" class="ng-binding">Spring Boot</ng-bind-html>
+    </span>
+  </a>
+  <!-- ngIf: item.tabs -->
+</li><!-- end ngIf: item.isValid === undefined || item.isValid() --></ul>
+      </div>
+    </vertical-nav>
+      <!-- ngInclude: --><div id="main" class="container-fluid container-pf-nav-pf-vertical hidden-icons-pf container-hawtio-nav-hawtio-vertical ng-scope" ng-class="{'collapsed-nav': $ctrl.verticalNavCollapsed}" ng-controller="HawtioNav.ViewController" ng-include="" src="viewPartial"><div class="tree-nav-layout ng-scope">
+  <div class="sidebar-pf sidebar-pf-left ng-isolate-scope resizable" resizable="" r-directions="['right']" style="">
+    <tree-header class="ng-isolate-scope tree-nav-sidebar-header"><div class="tree-nav-sidebar-header">
+  <form role="form" class="search-pf has-button ng-pristine ng-valid">
+    <div class="form-group has-clear">
+      <div class="search-pf-input-group">
+        <label for="input-search" class="sr-only">Search Tree:</label>
+        <input id="input-search" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Search tree:" ng-model="$ctrl.filter" type="search">
+        <button type="button" class="clear ng-hide" aria-hidden="true" ng-hide="$ctrl.filter.length === 0" ng-click="$ctrl.filter = ''">
+          <span class="pficon pficon-close"></span>
+        </button>
+      </div>
+    </div>
+    <div class="form-group tree-nav-buttons">
+      <span class="badge ng-binding ng-hide" ng-class="{positive: $ctrl.result.length > 0}" ng-show="$ctrl.filter.length > 0">
+        0
+      </span>
+      <i class="fa fa-plus-square-o" title="Expand All" ng-click="$ctrl.expandAll()"></i>
+      <i class="fa fa-minus-square-o" title="Collapse All" ng-click="$ctrl.contractAll()"></i>
+    </div>
+  </form>
+</div>
+</tree-header>
+    <tree class="ng-isolate-scope tree-nav-sidebar-content"><div class="tree-nav-sidebar-content">
+  <div class="spinner spinner-lg ng-hide" ng-hide="$ctrl.treeFetched()"></div>
+  <div id="jmxtree" class="treeview-pf-hover treeview-pf-select treeview"><ul class="list-group"><li class="list-group-item node-jmxtree JMImplementation" id="root-JMImplementation" data-nodeid="0.0"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>JMImplementation</li><li class="list-group-item node-jmxtree JMImplementation-MBeanServerDelegate can-invoke node-hidden" id="root-JMImplementation-MBeanServerDelegate" data-nodeid="0.0.0"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>MBeanServerDelegate</li><li class="list-group-item node-jmxtree com-sun-management" id="root-com.sun.management" data-nodeid="0.1"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>com.sun.management</li><li class="list-group-item node-jmxtree com-sun-management-DiagnosticCommand can-invoke node-hidden" id="root-com.sun.management-DiagnosticCommand" data-nodeid="0.1.0"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>DiagnosticCommand</li><li class="list-group-item node-jmxtree com-sun-management-HotSpotDiagnostic can-invoke node-hidden" id="root-com.sun.management-HotSpotDiagnostic" data-nodeid="0.1.1"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>HotSpotDiagnostic</li><li class="list-group-item node-jmxtree connector" id="root-connector" data-nodeid="0.2"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>connector</li><li class="list-group-item node-jmxtree connector-rmi-folder can-invoke node-hidden" id="root-connector-rmi" data-nodeid="0.2.0"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>rmi</li><li class="list-group-item node-jmxtree hawtio" id="root-hawtio" data-nodeid="0.3"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>hawtio</li><li class="list-group-item node-jmxtree hawtio-About can-invoke node-hidden" id="root-hawtio-About" data-nodeid="0.3.0"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>About</li><li class="list-group-item node-jmxtree hawtio-ConfigAdmin can-invoke node-hidden" id="root-hawtio-ConfigAdmin" data-nodeid="0.3.1"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>ConfigAdmin</li><li class="list-group-item node-jmxtree hawtio-LogQuery can-invoke node-hidden" id="root-hawtio-LogQuery" data-nodeid="0.3.2"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>LogQuery</li><li class="list-group-item node-jmxtree hawtio-OSGiTools can-invoke node-hidden" id="root-hawtio-OSGiTools" data-nodeid="0.3.3"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>OSGiTools</li><li class="list-group-item node-jmxtree hawtio-QuartzFacade can-invoke node-hidden" id="root-hawtio-QuartzFacade" data-nodeid="0.3.4"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>QuartzFacade</li><li class="list-group-item node-jmxtree hawtio-Registry can-invoke node-hidden" id="root-hawtio-Registry" data-nodeid="0.3.5"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Registry</li><li class="list-group-item node-jmxtree hawtio-SchemaLookup can-invoke node-hidden" id="root-hawtio-SchemaLookup" data-nodeid="0.3.6"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>SchemaLookup</li><li class="list-group-item node-jmxtree hawtio-TreeWatcher can-invoke node-hidden" id="root-hawtio-TreeWatcher" data-nodeid="0.3.7"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>TreeWatcher</li><li class="list-group-item node-jmxtree hawtio-security-folder node-hidden" id="root-hawtio-security" data-nodeid="0.3.8"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>security</li><li class="list-group-item node-jmxtree hawtio-security can-invoke node-hidden" id="root-hawtio-security-RBACRegistry" data-nodeid="0.3.8.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>RBACRegistry</li><li class="list-group-item node-jmxtree hawtio-jmx-folder node-hidden" id="root-hawtio-security-jmx" data-nodeid="0.3.8.1"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>jmx</li><li class="list-group-item node-jmxtree hawtio-0-folder node-hidden" id="root-hawtio-security-jmx-0" data-nodeid="0.3.8.1.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>0</li><li class="list-group-item node-jmxtree hawtio-security can-invoke node-hidden" id="root-hawtio-security-jmx-0-HawtioDummyJMXSecurity" data-nodeid="0.3.8.1.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>HawtioDummyJMXSecurity</li><li class="list-group-item node-jmxtree hawtio-jolokia-folder node-hidden" id="root-hawtio-security-jolokia" data-nodeid="0.3.8.2"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>jolokia</li><li class="list-group-item node-jmxtree hawtio-security can-invoke node-hidden" id="root-hawtio-security-jolokia-RBACDecorator" data-nodeid="0.3.8.2.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>RBACDecorator</li><li class="list-group-item node-jmxtree java-lang" id="root-java.lang" data-nodeid="0.4"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>java.lang</li><li class="list-group-item node-jmxtree java-lang-ClassLoading can-invoke node-hidden" id="root-java.lang-ClassLoading" data-nodeid="0.4.0"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>ClassLoading</li><li class="list-group-item node-jmxtree java-lang-Compilation can-invoke node-hidden" id="root-java.lang-Compilation" data-nodeid="0.4.1"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Compilation</li><li class="list-group-item node-jmxtree java-lang-GarbageCollector-folder node-hidden" id="root-java.lang-GarbageCollector" data-nodeid="0.4.2"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>GarbageCollector</li><li class="list-group-item node-jmxtree java-lang-GarbageCollector can-invoke node-hidden" id="root-java.lang-GarbageCollector-PS MarkSweep" data-nodeid="0.4.2.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>PS MarkSweep</li><li class="list-group-item node-jmxtree java-lang-GarbageCollector can-invoke node-hidden" id="root-java.lang-GarbageCollector-PS Scavenge" data-nodeid="0.4.2.1"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>PS Scavenge</li><li class="list-group-item node-jmxtree java-lang-Memory can-invoke node-hidden" id="root-java.lang-Memory" data-nodeid="0.4.3"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Memory</li><li class="list-group-item node-jmxtree java-lang-MemoryManager-folder node-hidden" id="root-java.lang-MemoryManager" data-nodeid="0.4.4"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>MemoryManager</li><li class="list-group-item node-jmxtree java-lang-MemoryManager can-invoke node-hidden" id="root-java.lang-MemoryManager-CodeCacheManager" data-nodeid="0.4.4.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>CodeCacheManager</li><li class="list-group-item node-jmxtree java-lang-MemoryManager can-invoke node-hidden" id="root-java.lang-MemoryManager-Metaspace Manager" data-nodeid="0.4.4.1"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Metaspace Manager</li><li class="list-group-item node-jmxtree java-lang-MemoryPool-folder node-hidden" id="root-java.lang-MemoryPool" data-nodeid="0.4.5"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>MemoryPool</li><li class="list-group-item node-jmxtree java-lang-MemoryPool can-invoke node-hidden" id="root-java.lang-MemoryPool-Code Cache" data-nodeid="0.4.5.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Code Cache</li><li class="list-group-item node-jmxtree java-lang-MemoryPool can-invoke node-hidden" id="root-java.lang-MemoryPool-Compressed Class Space" data-nodeid="0.4.5.1"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Compressed Class Space</li><li class="list-group-item node-jmxtree java-lang-MemoryPool can-invoke node-hidden" id="root-java.lang-MemoryPool-Metaspace" data-nodeid="0.4.5.2"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Metaspace</li><li class="list-group-item node-jmxtree java-lang-MemoryPool can-invoke node-hidden" id="root-java.lang-MemoryPool-PS Eden Space" data-nodeid="0.4.5.3"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>PS Eden Space</li><li class="list-group-item node-jmxtree java-lang-MemoryPool can-invoke node-hidden" id="root-java.lang-MemoryPool-PS Old Gen" data-nodeid="0.4.5.4"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>PS Old Gen</li><li class="list-group-item node-jmxtree java-lang-MemoryPool can-invoke node-hidden" id="root-java.lang-MemoryPool-PS Survivor Space" data-nodeid="0.4.5.5"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>PS Survivor Space</li><li class="list-group-item node-jmxtree java-lang-OperatingSystem can-invoke node-hidden" id="root-java.lang-OperatingSystem" data-nodeid="0.4.6"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>OperatingSystem</li><li class="list-group-item node-jmxtree java-lang-Runtime can-invoke node-hidden" id="root-java.lang-Runtime" data-nodeid="0.4.7"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Runtime</li><li class="list-group-item node-jmxtree java-lang-Threading can-invoke node-hidden" id="root-java.lang-Threading" data-nodeid="0.4.8"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Threading</li><li class="list-group-item node-jmxtree java-nio" id="root-java.nio" data-nodeid="0.5"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>java.nio</li><li class="list-group-item node-jmxtree java-nio-BufferPool-folder node-hidden" id="root-java.nio-BufferPool" data-nodeid="0.5.0"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>BufferPool</li><li class="list-group-item node-jmxtree java-nio-BufferPool can-invoke node-hidden" id="root-java.nio-BufferPool-direct" data-nodeid="0.5.0.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>direct</li><li class="list-group-item node-jmxtree java-nio-BufferPool can-invoke node-hidden" id="root-java.nio-BufferPool-mapped" data-nodeid="0.5.0.1"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>mapped</li><li class="list-group-item node-jmxtree java-util-logging" id="root-java.util.logging" data-nodeid="0.6"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>java.util.logging</li><li class="list-group-item node-jmxtree java-util-logging-Logging can-invoke node-hidden" id="root-java.util.logging-Logging" data-nodeid="0.6.0"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Logging</li><li class="list-group-item node-jmxtree jboss-jta" id="root-jboss.jta" data-nodeid="0.7"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>jboss.jta</li><li class="list-group-item node-jmxtree jboss-jta-ObjectStore can-invoke node-hidden" id="root-jboss.jta-ObjectStore" data-nodeid="0.7.0"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>ObjectStore</li><li class="list-group-item node-jmxtree jmx4perl" id="root-jmx4perl" data-nodeid="0.8"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>jmx4perl</li><li class="list-group-item node-jmxtree jmx4perl-Config-folder node-hidden" id="root-jmx4perl-Config" data-nodeid="0.8.0"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>Config</li><li class="list-group-item node-jmxtree jmx4perl-Config can-invoke node-hidden" id="root-jmx4perl-Config-hawtio" data-nodeid="0.8.0.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>hawtio</li><li class="list-group-item node-jmxtree jolokia" id="root-jolokia" data-nodeid="0.9"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>jolokia</li><li class="list-group-item node-jmxtree jolokia-Config-folder node-hidden" id="root-jolokia-Config" data-nodeid="0.9.0"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>Config</li><li class="list-group-item node-jmxtree jolokia-Config can-invoke node-hidden" id="root-jolokia-Config-hawtio" data-nodeid="0.9.0.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>hawtio</li><li class="list-group-item node-jmxtree jolokia-Discovery can-invoke node-hidden" id="root-jolokia-Discovery" data-nodeid="0.9.1"><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>Discovery</li><li class="list-group-item node-jmxtree jolokia-ServerHandler-folder node-hidden" id="root-jolokia-ServerHandler" data-nodeid="0.9.2"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>ServerHandler</li><li class="list-group-item node-jmxtree jolokia-ServerHandler can-invoke node-hidden" id="root-jolokia-ServerHandler-hawtio" data-nodeid="0.9.2.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>hawtio</li><li class="list-group-item node-jmxtree org-apache-aries-blueprint" id="root-org.apache.aries.blueprint" data-nodeid="0.10"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>org.apache.aries.blueprint</li><li class="list-group-item node-jmxtree org-apache-aries-blueprint-blueprintMetadata-folder node-hidden" id="root-org.apache.aries.blueprint-blueprintMetadata" data-nodeid="0.10.0"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>blueprintMetadata</li><li class="list-group-item node-jmxtree org-apache-aries-blueprint-1-0-folder can-invoke node-hidden" id="root-org.apache.aries.blueprint-blueprintMetadata-1.0" data-nodeid="0.10.0.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>1.0</li><li class="list-group-item node-jmxtree org-apache-aries-blueprint-blueprintState-folder node-hidden" id="root-org.apache.aries.blueprint-blueprintState" data-nodeid="0.10.1"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>blueprintState</li><li class="list-group-item node-jmxtree org-apache-aries-blueprint-1-0-folder can-invoke node-hidden" id="root-org.apache.aries.blueprint-blueprintState-1.0" data-nodeid="0.10.1.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>1.0</li><li class="list-group-item node-jmxtree org-apache-karaf" id="root-org.apache.karaf" data-nodeid="0.11"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>org.apache.karaf</li><li class="list-group-item node-jmxtree org-apache-karaf-Region-folder node-hidden" id="root-org.apache.karaf-Region" data-nodeid="0.11.0"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>Region</li><li class="list-group-item node-jmxtree org-apache-karaf-root-folder node-hidden" id="root-org.apache.karaf-Region-root" data-nodeid="0.11.0.0"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-Region can-invoke node-hidden" id="root-org.apache.karaf-Region-root-f4f453f6-c546-43c9-8f74-648965648d40" data-nodeid="0.11.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>f4f453f6-c546-43c9-8f74-648965648d40</li><li class="list-group-item node-jmxtree org-apache-karaf-RegionDigraph-folder node-hidden" id="root-org.apache.karaf-RegionDigraph" data-nodeid="0.11.1"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>RegionDigraph</li><li class="list-group-item node-jmxtree org-apache-karaf-RegionDigraph can-invoke node-hidden" id="root-org.apache.karaf-RegionDigraph-f4f453f6-c546-43c9-8f74-648965648d40" data-nodeid="0.11.1.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>f4f453f6-c546-43c9-8f74-648965648d40</li><li class="list-group-item node-jmxtree org-apache-karaf-bundle-folder node-hidden" id="root-org.apache.karaf-bundle" data-nodeid="0.11.2"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>bundle</li><li class="list-group-item node-jmxtree org-apache-karaf-bundle can-invoke node-hidden" id="root-org.apache.karaf-bundle-root" data-nodeid="0.11.2.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-config-folder node-hidden" id="root-org.apache.karaf-config" data-nodeid="0.11.3"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>config</li><li class="list-group-item node-jmxtree org-apache-karaf-config can-invoke node-hidden" id="root-org.apache.karaf-config-root" data-nodeid="0.11.3.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-diagnostic-folder node-hidden" id="root-org.apache.karaf-diagnostic" data-nodeid="0.11.4"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>diagnostic</li><li class="list-group-item node-jmxtree org-apache-karaf-diagnostic can-invoke node-hidden" id="root-org.apache.karaf-diagnostic-root" data-nodeid="0.11.4.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-feature-folder node-hidden" id="root-org.apache.karaf-feature" data-nodeid="0.11.5"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>feature</li><li class="list-group-item node-jmxtree org-apache-karaf-feature can-invoke node-hidden" id="root-org.apache.karaf-feature-root" data-nodeid="0.11.5.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-http-folder node-hidden" id="root-org.apache.karaf-http" data-nodeid="0.11.6"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>http</li><li class="list-group-item node-jmxtree org-apache-karaf-http can-invoke node-hidden" id="root-org.apache.karaf-http-root" data-nodeid="0.11.6.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-instance-folder node-hidden" id="root-org.apache.karaf-instance" data-nodeid="0.11.7"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>instance</li><li class="list-group-item node-jmxtree org-apache-karaf-instance can-invoke node-hidden" id="root-org.apache.karaf-instance-root" data-nodeid="0.11.7.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-kar-folder node-hidden" id="root-org.apache.karaf-kar" data-nodeid="0.11.8"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>kar</li><li class="list-group-item node-jmxtree org-apache-karaf-kar can-invoke node-hidden" id="root-org.apache.karaf-kar-root" data-nodeid="0.11.8.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-log-folder node-hidden" id="root-org.apache.karaf-log" data-nodeid="0.11.9"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>log</li><li class="list-group-item node-jmxtree org-apache-karaf-log can-invoke node-hidden" id="root-org.apache.karaf-log-root" data-nodeid="0.11.9.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-package-folder node-hidden" id="root-org.apache.karaf-package" data-nodeid="0.11.10"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>package</li><li class="list-group-item node-jmxtree org-apache-karaf-package can-invoke node-hidden" id="root-org.apache.karaf-package-root" data-nodeid="0.11.10.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-scr-folder node-hidden" id="root-org.apache.karaf-scr" data-nodeid="0.11.11"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>scr</li><li class="list-group-item node-jmxtree org-apache-karaf-scr can-invoke node-hidden" id="root-org.apache.karaf-scr-root" data-nodeid="0.11.11.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-security-folder node-hidden" id="root-org.apache.karaf-security" data-nodeid="0.11.12"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>security</li><li class="list-group-item node-jmxtree org-apache-karaf-jmx-folder node-hidden" id="root-org.apache.karaf-security-jmx" data-nodeid="0.11.12.0"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>jmx</li><li class="list-group-item node-jmxtree org-apache-karaf-security can-invoke node-hidden" id="root-org.apache.karaf-security-jmx-root" data-nodeid="0.11.12.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-service-folder node-hidden" id="root-org.apache.karaf-service" data-nodeid="0.11.13"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>service</li><li class="list-group-item node-jmxtree org-apache-karaf-service can-invoke node-hidden" id="root-org.apache.karaf-service-root" data-nodeid="0.11.13.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-system-folder node-hidden" id="root-org.apache.karaf-system" data-nodeid="0.11.14"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>system</li><li class="list-group-item node-jmxtree org-apache-karaf-system can-invoke node-hidden" id="root-org.apache.karaf-system-root" data-nodeid="0.11.14.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-apache-karaf-web-folder node-hidden" id="root-org.apache.karaf-web" data-nodeid="0.11.15"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>web</li><li class="list-group-item node-jmxtree org-apache-karaf-web can-invoke node-hidden" id="root-org.apache.karaf-web-root" data-nodeid="0.11.15.0"><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>root</li><li class="list-group-item node-jmxtree org-xnio" id="root-org.xnio" data-nodeid="0.12"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>org.xnio</li><li class="list-group-item node-jmxtree org-xnio-Xnio-folder node-hidden" id="root-org.xnio-Xnio" data-nodeid="0.12.0"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>Xnio</li><li class="list-group-item node-jmxtree org-xnio-&quot;nio&quot;-folder node-hidden" id="root-org.xnio-Xnio-&quot;nio&quot;" data-nodeid="0.12.0.0"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>"nio"</li><li class="list-group-item node-jmxtree org-xnio-&quot;XNIO-4&quot;-folder node-hidden" id="root-org.xnio-Xnio-&quot;nio&quot;-&quot;XNIO-4&quot;" data-nodeid="0.12.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>"XNIO-4"</li><li class="list-group-item node-jmxtree org-xnio-Xnio can-invoke node-hidden" id="root-org.xnio-Xnio-&quot;nio&quot;-&quot;XNIO-4&quot;-&quot;/0:0:0:0:0:0:0:0:8181&quot;" data-nodeid="0.12.0.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>/0:0:0:0:0:0:0:0:8181</li><li class="list-group-item node-jmxtree org-xnio-Xnio can-invoke node-hidden" id="root-org.xnio-Xnio-&quot;nio&quot;-&quot;XNIO-1&quot;" data-nodeid="0.12.0.0.1"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>XNIO-1</li><li class="list-group-item node-jmxtree org-xnio-Xnio can-invoke node-hidden" id="root-org.xnio-Xnio-&quot;nio&quot;" data-nodeid="0.12.0.1"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>nio</li><li class="list-group-item node-jmxtree org-xnio-Xnio can-invoke node-hidden" id="root-org.xnio-Xnio-&quot;nio&quot;-&quot;XNIO-2&quot;" data-nodeid="0.12.0.1.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>XNIO-2</li><li class="list-group-item node-jmxtree org-xnio-Xnio can-invoke node-hidden" id="root-org.xnio-Xnio-&quot;nio&quot;-&quot;XNIO-3&quot;" data-nodeid="0.12.0.1.1"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>XNIO-3</li><li class="list-group-item node-jmxtree org-xnio-Xnio can-invoke node-hidden" id="root-org.xnio-Xnio-&quot;nio&quot;-&quot;XNIO-4&quot;" data-nodeid="0.12.0.1.2"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>XNIO-4</li><li class="list-group-item node-jmxtree osgi-compendium" id="root-osgi.compendium" data-nodeid="0.13"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>osgi.compendium</li><li class="list-group-item node-jmxtree osgi-compendium-cm-folder node-hidden" id="root-osgi.compendium-cm" data-nodeid="0.13.0"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>cm</li><li class="list-group-item node-jmxtree osgi-compendium-1-3-folder node-hidden" id="root-osgi.compendium-cm-1.3" data-nodeid="0.13.0.0"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>1.3</li><li class="list-group-item node-jmxtree osgi-compendium-org-apache-felix-framework-folder node-hidden" id="root-osgi.compendium-cm-1.3-org.apache.felix.framework" data-nodeid="0.13.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>org.apache.felix.framework</li><li class="list-group-item node-jmxtree osgi-compendium-f4f453f6-c546-43c9-8f74-648965648d40-folder can-invoke node-hidden" id="root-osgi.compendium-cm-1.3-org.apache.felix.framework-f4f453f6-c546-43c9-8f74-648965648d40" data-nodeid="0.13.0.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>f4f453f6-c546-43c9-8f74-648965648d40</li><li class="list-group-item node-jmxtree osgi-core" id="root-osgi.core" data-nodeid="0.14"><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>osgi.core</li><li class="list-group-item node-jmxtree osgi-core-bundleState-folder node-hidden" id="root-osgi.core-bundleState" data-nodeid="0.14.0"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>bundleState</li><li class="list-group-item node-jmxtree osgi-core-1-7-folder node-hidden" id="root-osgi.core-bundleState-1.7" data-nodeid="0.14.0.0"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>1.7</li><li class="list-group-item node-jmxtree osgi-core-org-apache-felix-framework-folder node-hidden" id="root-osgi.core-bundleState-1.7-org.apache.felix.framework" data-nodeid="0.14.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>org.apache.felix.framework</li><li class="list-group-item node-jmxtree osgi-core-bundleState can-invoke node-hidden" id="root-osgi.core-bundleState-1.7-org.apache.felix.framework-f4f453f6-c546-43c9-8f74-648965648d40" data-nodeid="0.14.0.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>f4f453f6-c546-43c9-8f74-648965648d40</li><li class="list-group-item node-jmxtree osgi-core-framework-folder node-hidden" id="root-osgi.core-framework" data-nodeid="0.14.1"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>framework</li><li class="list-group-item node-jmxtree osgi-core-1-7-folder node-hidden" id="root-osgi.core-framework-1.7" data-nodeid="0.14.1.0"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>1.7</li><li class="list-group-item node-jmxtree osgi-core-org-apache-felix-framework-folder node-hidden" id="root-osgi.core-framework-1.7-org.apache.felix.framework" data-nodeid="0.14.1.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>org.apache.felix.framework</li><li class="list-group-item node-jmxtree osgi-core-framework can-invoke node-hidden" id="root-osgi.core-framework-1.7-org.apache.felix.framework-f4f453f6-c546-43c9-8f74-648965648d40" data-nodeid="0.14.1.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>f4f453f6-c546-43c9-8f74-648965648d40</li><li class="list-group-item node-jmxtree osgi-core-packageState-folder node-hidden" id="root-osgi.core-packageState" data-nodeid="0.14.2"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>packageState</li><li class="list-group-item node-jmxtree osgi-core-1-5-folder node-hidden" id="root-osgi.core-packageState-1.5" data-nodeid="0.14.2.0"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>1.5</li><li class="list-group-item node-jmxtree osgi-core-org-apache-felix-framework-folder node-hidden" id="root-osgi.core-packageState-1.5-org.apache.felix.framework" data-nodeid="0.14.2.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>org.apache.felix.framework</li><li class="list-group-item node-jmxtree osgi-core-packageState can-invoke node-hidden" id="root-osgi.core-packageState-1.5-org.apache.felix.framework-f4f453f6-c546-43c9-8f74-648965648d40" data-nodeid="0.14.2.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>f4f453f6-c546-43c9-8f74-648965648d40</li><li class="list-group-item node-jmxtree osgi-core-serviceState-folder node-hidden" id="root-osgi.core-serviceState" data-nodeid="0.14.3"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>serviceState</li><li class="list-group-item node-jmxtree osgi-core-1-7-folder node-hidden" id="root-osgi.core-serviceState-1.7" data-nodeid="0.14.3.0"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>1.7</li><li class="list-group-item node-jmxtree osgi-core-org-apache-felix-framework-folder node-hidden" id="root-osgi.core-serviceState-1.7-org.apache.felix.framework" data-nodeid="0.14.3.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>org.apache.felix.framework</li><li class="list-group-item node-jmxtree osgi-core-serviceState can-invoke node-hidden" id="root-osgi.core-serviceState-1.7-org.apache.felix.framework-f4f453f6-c546-43c9-8f74-648965648d40" data-nodeid="0.14.3.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>f4f453f6-c546-43c9-8f74-648965648d40</li><li class="list-group-item node-jmxtree osgi-core-wiringState-folder node-hidden" id="root-osgi.core-wiringState" data-nodeid="0.14.4"><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>wiringState</li><li class="list-group-item node-jmxtree osgi-core-1-1-folder node-hidden" id="root-osgi.core-wiringState-1.1" data-nodeid="0.14.4.0"><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>1.1</li><li class="list-group-item node-jmxtree osgi-core-org-apache-felix-framework-folder node-hidden" id="root-osgi.core-wiringState-1.1-org.apache.felix.framework" data-nodeid="0.14.4.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon expand-icon fa fa-angle-right"></span><span class="icon node-icon pficon pficon-folder-close"></span>org.apache.felix.framework</li><li class="list-group-item node-jmxtree osgi-core-wiringState can-invoke node-hidden" id="root-osgi.core-wiringState-1.1-org.apache.felix.framework-f4f453f6-c546-43c9-8f74-648965648d40" data-nodeid="0.14.4.0.0.0"><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="indent"></span><span class="icon glyphicon"></span><span class="icon node-icon fa fa-cube"></span>f4f453f6-c546-43c9-8f74-648965648d40</li></ul></div>
+</div>
+</tree>
+  <div class="rg-right"><span></span></div></div>
+  <div class="tree-nav-main">
+    <jmx-header class="ng-isolate-scope">
+      <div class="jmx-header">
+        <h1 class="ng-binding">
+          
+          <small class="text-muted ng-binding"></small>
+        </h1>
+      </div>
+      </jmx-header>
+    <jmx-navigation class="ng-isolate-scope"><hawtio-tabs tabs="$ctrl.tabs" on-change="$ctrl.goto(tab)" class="ng-isolate-scope">
+      <!-- ngIf: $ctrl.tabs --><ul class="nav nav-tabs hawtio-tabs ng-scope" ng-if="$ctrl.tabs">
+        <!-- ngRepeat: tab in $ctrl.tabs track by tab.path --><li ng-repeat="tab in $ctrl.tabs track by tab.path" class="hawtio-tab ng-scope active" ng-class="{invisible: $ctrl.adjustingTabs, active: tab === $ctrl.activeTab}">
+          <a href="#" ng-click="$ctrl.onClick(tab)" class="ng-binding">Attributes</a>
+        </li><!-- end ngRepeat: tab in $ctrl.tabs track by tab.path --><li ng-repeat="tab in $ctrl.tabs track by tab.path" class="hawtio-tab ng-scope" ng-class="{invisible: $ctrl.adjustingTabs, active: tab === $ctrl.activeTab}">
+          <a href="#" ng-click="$ctrl.onClick(tab)" class="ng-binding">Operations</a>
+        </li><!-- end ngRepeat: tab in $ctrl.tabs track by tab.path --><li ng-repeat="tab in $ctrl.tabs track by tab.path" class="hawtio-tab ng-scope" ng-class="{invisible: $ctrl.adjustingTabs, active: tab === $ctrl.activeTab}">
+          <a href="#" ng-click="$ctrl.onClick(tab)" class="ng-binding">Chart</a>
+        </li><!-- end ngRepeat: tab in $ctrl.tabs track by tab.path -->
+        <li class="dropdown invisible" ng-class="{invisible: $ctrl.moreTabs.length === 0}">
+          <a id="moreDropdown" class="dropdown-toggle" href="" data-toggle="dropdown">
+            More
+            <span class="caret"></span>
+          
+          </a><ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="moreDropdown"><a id="moreDropdown" class="dropdown-toggle" href="" data-toggle="dropdown">
+            </a><!-- ngRepeat: tab in $ctrl.moreTabs track by tab.label -->
+          </ul>
+        </li>
+      </ul><!-- end ngIf: $ctrl.tabs -->
+    </hawtio-tabs></jmx-navigation>
+    <!-- ngView: --><div class="contents ng-scope" ng-view=""><div class="table-view ng-scope" ng-controller="Jmx.AttributesController">
+  <h2>Attributes</h2>
+  <!-- ngIf: gridData.length > 0 -->
+</div>
+
+<script type="text/ng-template" id="gridTemplate" class="ng-scope">
+  <table class="table table-striped table-bordered table-hover jmx-attributes-table"
+    ng-class="{'ht-table-extra-columns': hasExtraColumns}"
+    hawtio-simple-table="gridOptions">
+  </table>
+</script>
+
+<script type="text/ng-template" id="attributeModal.html" class="ng-scope">
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" ng-click="$dismiss()">
+      <span class="pficon pficon-close" aria-hidden="true"></span>
+    </button>
+    <h4 class="modal-title">Attribute: {{entity.key}}</h4>
+  </div>
+  <div class="modal-body">
+    <div simple-form ng-hide="!entity.rw" name="attributeEditor" mode="edit" entity='entity' data='attributeSchemaEdit'></div>
+    <div simple-form ng-hide="entity.rw" name="attributeViewer" mode="view" entity='entity' data='attributeSchemaView'></div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="$dismiss()">Close</button>
+    <button type="button" class="btn btn-primary" ng-show="entity.rw" ng-click="$close()">Update</button>
+  </div>
+</script>
+</div>
+  </div>
+</div>
+</div>
+    </hawtio-app>
+  
+
+</body></html>
